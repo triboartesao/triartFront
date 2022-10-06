@@ -9,10 +9,11 @@ import InputAdornment from '@mui/material/InputAdornment';
 import InputLabel from '@mui/material/InputLabel';
 import OutlinedInput from '@mui/material/OutlinedInput';
 import IconButton from '@mui/material/IconButton';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import useLocalStorage from 'react-use-localstorage';
 import { login } from '../../services/Service';
 import UserLogin from '../../models/UserLogin'
+
 
 interface State {
   password: string;
@@ -82,7 +83,7 @@ function Login() {
     <Grid container direction='row' justifyContent='center' alignItems='center'>
       <Grid alignItems='center' xs={6} justifyContent='center'>
         <Box>
-          <form >
+          <form onSubmit={conectar}>
             <Typography variant='h3' gutterBottom color='textPrimary' component='h3' align='center' style={{ fontWeight: 'bold' }}>Login</Typography>
             <TextField
                 onChange={(event: ChangeEvent<HTMLInputElement>) => updateModel(event)}
@@ -121,6 +122,16 @@ function Login() {
                 <Button type='submit' variant='contained' color='primary'>Entrar</Button>
               </Box>
           </form>
+          <Box display='flex' justifyContent='center' marginTop={2}>
+                        <Box marginRight={1}>
+                            <Typography variant='subtitle1' gutterBottom align='center'>Não possui conta?</Typography>
+                        </Box>
+          
+            <Link to= '/cadastrar'>
+               <Typography variant='subtitle1' gutterBottom align='center' className='textos1'>Cadastre-se</Typography>
+             </Link>
+                       
+          </Box>
         </Box>
 
 
