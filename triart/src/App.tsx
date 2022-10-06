@@ -7,8 +7,6 @@ import Sobre from './paginas/sobre/Sobre';
 import Login from './paginas/login/Login';
 import './App.css';
 
-
-
 function App() {
   return (
     <BrowserRouter>
@@ -29,5 +27,4 @@ function App() {
     </BrowserRouter>
   );
 }
-
 export default App;
