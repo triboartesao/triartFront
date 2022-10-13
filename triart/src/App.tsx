@@ -7,9 +7,18 @@ import Sobre from './paginas/sobre/Sobre';
 import Login from './paginas/login/Login';
 import CadastroUsuario from './paginas/cadastroUsuario/CadastroUsuario';
 import './App.css';
+import ListaProdutos from './components/produtos/listaProdutos/ListaProdutos';
+import ListaCategoria from './components/categorias/listaCategoria/ListaCategoria';
+import CadastroCategoria from './components/categorias/cadastroCategoria/CadastroCategoria';
+import DeletarProdutos from './components/produtos/deletarProdutos/DeletarProdutos';
+import CadastroProdutos from './components/produtos/cadastroProdutos/CadastroProdutos';
+import { Provider } from 'react-redux';
+import store from './store/Store';
 
 function App() {
   return (
+
+    <Provider store={store}>
     <BrowserRouter>
       
         <Navbar />
@@ -20,6 +29,11 @@ function App() {
             <Route path="/login" element={<Login />} />
             <Route path="/home" element={<Home />} />
             <Route path="/cadastrar" element={<CadastroUsuario />} />
+            <Route path="/produtos" element={<ListaProdutos />} />
+            <Route path="/categorias" element={<ListaCategoria />} />
+            <Route path="/formularioCategoria" element={<CadastroCategoria />} />
+            <Route path="/atualizarProduto" element={<CadastroProdutos />} />
+            <Route path="/deletarProduto" element={<DeletarProdutos/>} />
 
           </Routes>
         </div>
@@ -27,6 +41,7 @@ function App() {
         <Footer />
       
     </BrowserRouter>
+    </Provider>
   );
 }
 export default App;

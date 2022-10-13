@@ -33,7 +33,7 @@ function CadastroProdutos() {
   
     useEffect(() => {
       if (token === '') {
-        alert('Erro de conexão, realize o Login novamentem');
+        alert('Erro de conexão, realize o Login novamente');
         navigate('/login');
       }
     }, [token]);
@@ -46,14 +46,14 @@ function CadastroProdutos() {
     }, [categoria]);
 
     useEffect(() => {
-      getTemas()
+      getCategoria()
       if (id !== undefined) {
-          findByIdPostagens(id)
+          findByIdProdutos(id)
       }
   }, [id])
   
-    async function findByIdPostagens(id: string) {
-      await buscaId(`postagens/${id}`, setProdutos, {
+    async function findByIdProdutos(id: string) {
+      await buscaId(`produtos/${id}`, setProdutos, {
         headers: {
           Authorization: token,
         },
@@ -61,14 +61,14 @@ function CadastroProdutos() {
     }
   
     useEffect(() => {
-      getTemas();
+      getCategoria();
       if (id !== undefined) {
-        findByIdPostagens(id);
+        findByIdProdutos(id);
       }
     }, [id]);
   
-    async function getTemas() {
-      await busca('/temas', setCategoria, {
+    async function getCategoria() {
+      await busca('/categorias', setCategoria, {
         headers: {
           Authorization: token,
         },
@@ -114,7 +114,10 @@ function back() {
       <form onSubmit={onSubmit}>
           <Typography variant="h3" color="textSecondary" component="h1" align="center" >Formulário de cadastro postagem</Typography>
           <TextField value={produtos.nome} onChange={(event: ChangeEvent<HTMLInputElement>) => updatedProduto(event)} id="nome" label="nome" variant="outlined" name="titulo" margin="normal" fullWidth />
-          <TextField value={produtos.descricao} onChange={(event: ChangeEvent<HTMLInputElement>) => updatedProduto(event)} id="descricao" label="descricao" name="texto" variant="outlined" margin="normal" fullWidth />
+          <TextField value={produtos.descricao} onChange={(event: ChangeEvent<HTMLInputElement>) => updatedProduto(event)} id="descricao" label="descrição" name="texto" variant="outlined" margin="normal" fullWidth />
+          <TextField value={produtos.quantidade} onChange={(event: ChangeEvent<HTMLInputElement>) => updatedProduto(event)} id="quantidade" label="quantidade" name="texto" variant="outlined" margin="normal" fullWidth />
+          <TextField value={produtos.preco} onChange={(event: ChangeEvent<HTMLInputElement>) => updatedProduto(event)} id="preco" label="preço" name="texto" variant="outlined" margin="normal" fullWidth />
+         
 
           <FormControl >
               <InputLabel id="demo-simple-select-helper-label">Categoria </InputLabel>

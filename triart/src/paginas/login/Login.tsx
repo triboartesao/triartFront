@@ -13,6 +13,8 @@ import { Link, useNavigate } from 'react-router-dom';
 import useLocalStorage from 'react-use-localstorage';
 import { login } from '../../services/Service';
 import UserLogin from '../../models/UserLogin'
+import { useDispatch } from 'react-redux';
+import { addToken } from '../../store/tokens/Actions';
 
 
 interface State {
@@ -23,7 +25,8 @@ interface State {
 function Login() {
 
   let navigate = useNavigate()
-  const [token, setToken] = useLocalStorage('token')
+  const dispatch = useDispatch()
+  const [token, setToken] = useState('')
   const [userLogin, setUserLogin] = useState<UserLogin>({
     id: 0,
     nome: '',
@@ -33,50 +36,52 @@ function Login() {
     token: ''
   });
 
-  function updateModel(event: ChangeEvent<HTMLInputElement>) {
+  function updateModel(event: ChangeEvent<HTMLInputElement>){
     setUserLogin({
       ...userLogin,
       [event.target.name]: event.target.value
     })
   }
 
-  async function conectar(event: ChangeEvent<HTMLFormElement>) {
+  async function conectar(event: ChangeEvent<HTMLFormElement>){
     event.preventDefault();
-    try {
+    try{
       await login('usuarios/logar', userLogin, setToken)
 
       alert('Usuário Logado com Sucesso!!!');
-    } catch (error) {
+    }catch(error){
       alert('Erro ao Logar!!! Verifique os dados e tente novamente.')
     }
   }
 
   useEffect(() => {
-    if (token !== '') {
+    if(token !== ''){
+      dispatch(addToken(token))
       navigate('/home')
     }
   }, [token])
 
   const [values, setValues] = React.useState<State>({
-    password: '',
-    showPassword: false,
+      password: '',
+      showPassword: false,
   });
 
   const handleChange =
-    (prop: keyof State) => (event: React.ChangeEvent<HTMLInputElement>) => {
-      setValues({ ...values, [prop]: event.target.value });
-    };
-
-  const handleClickShowPassword = () => {
-    setValues({
-      ...values,
-      showPassword: !values.showPassword,
-    });
+  (prop: keyof State) => (event: React.ChangeEvent<HTMLInputElement>) => {
+    setValues({ ...values, [prop]: event.target.value });
   };
 
-  const handleMouseDownPassword = (event: React.MouseEvent<HTMLButtonElement>) => {
-    event.preventDefault();
-  };
+const handleClickShowPassword = () => {
+  setValues({
+    ...values,
+    showPassword: !values.showPassword,
+  });
+};
+
+const handleMouseDownPassword = (event: React.MouseEvent<HTMLButtonElement>) => {
+  event.preventDefault();
+};
+
 
   return (
 
