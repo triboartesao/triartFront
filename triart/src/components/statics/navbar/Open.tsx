@@ -48,6 +48,8 @@ export default function Open() {
         <MenuItem onClick={handleClose}>Cadastrar produto</MenuItem>
         </Link>
 
+        
+
       </Menu>
     </div>
   );

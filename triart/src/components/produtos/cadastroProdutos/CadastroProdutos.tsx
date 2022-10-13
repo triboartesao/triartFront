@@ -68,7 +68,7 @@ function CadastroProdutos() {
     }, [id]);
   
     async function getCategoria() {
-      await busca('/categorias', setCategoria, {
+      await busca('/categorias', setCategorias, {
         headers: {
           Authorization: token,
         },
@@ -112,11 +112,11 @@ function back() {
   return (
     <Container maxWidth="sm">
       <form onSubmit={onSubmit}>
-          <Typography variant="h3" color="textSecondary" component="h1" align="center" >Formulário de cadastro postagem</Typography>
-          <TextField value={produtos.nome} onChange={(event: ChangeEvent<HTMLInputElement>) => updatedProduto(event)} id="nome" label="nome" variant="outlined" name="titulo" margin="normal" fullWidth />
-          <TextField value={produtos.descricao} onChange={(event: ChangeEvent<HTMLInputElement>) => updatedProduto(event)} id="descricao" label="descrição" name="texto" variant="outlined" margin="normal" fullWidth />
-          <TextField value={produtos.quantidade} onChange={(event: ChangeEvent<HTMLInputElement>) => updatedProduto(event)} id="quantidade" label="quantidade" name="texto" variant="outlined" margin="normal" fullWidth />
-          <TextField value={produtos.preco} onChange={(event: ChangeEvent<HTMLInputElement>) => updatedProduto(event)} id="preco" label="preço" name="texto" variant="outlined" margin="normal" fullWidth />
+          <Typography variant="h3" color="textSecondary" component="h1" align="center" >Formulário de cadastro de Produtos</Typography>
+          <TextField value={produtos.nome} onChange={(event: ChangeEvent<HTMLInputElement>) => updatedProduto(event)} id="nome" label="nome" variant="outlined" name="nome" margin="normal" fullWidth />
+          <TextField value={produtos.descricao} onChange={(event: ChangeEvent<HTMLInputElement>) => updatedProduto(event)} id="descricao" label="descrição" name="descricao" variant="outlined" margin="normal" fullWidth />
+          <TextField value={produtos.quantidade} onChange={(event: ChangeEvent<HTMLInputElement>) => updatedProduto(event)} id="quantidade" label="quantidade" name="quantidade" variant="outlined" margin="normal" fullWidth />
+          <TextField value={produtos.preco} onChange={(event: ChangeEvent<HTMLInputElement>) => updatedProduto(event)} id="preco" label="preço" name="preco" variant="outlined" margin="normal" fullWidth />
          
 
           <FormControl >

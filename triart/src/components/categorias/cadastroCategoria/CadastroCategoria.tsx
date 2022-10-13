@@ -91,7 +91,7 @@ const [categoria, setCategoria] = useState<Categoria>({
               updatedCategoria(event)
             }
             id="Tipo"
-            name="Tipo"
+            name="tipo"
             variant="outlined"
             margin="normal"
             fullWidth
