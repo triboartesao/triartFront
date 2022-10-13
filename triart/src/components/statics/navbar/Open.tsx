@@ -44,7 +44,7 @@ export default function Open() {
         <MenuItem onClick={handleClose}>Cadastrar Categorias</MenuItem>
         </Link>
 
-        <Link to='/atualizarproduto' className='text-decorator-none'>
+        <Link to='/atualizarproduto/' className='text-decorator-none'>
         <MenuItem onClick={handleClose}>Cadastrar produto</MenuItem>
         </Link>
 
