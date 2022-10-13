@@ -81,11 +81,11 @@ const [categoria, setCategoria] = useState<Categoria>({
         <Container maxWidth="sm">
         <form onSubmit={cadastrar}>
           <Typography variant="h3" component="h1">
-            Novo tema
+            Nova Categoria
           </Typography>
 
           <TextField
-            label="Nome do tema"
+            label="Nome da categoria"
             value={categoria.tipo}
             onChange={(event: ChangeEvent<HTMLInputElement>) =>
               updatedCategoria(event)

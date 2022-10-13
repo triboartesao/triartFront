@@ -5,6 +5,7 @@ import MenuItem from '@material-ui/core/MenuItem';
 import Fade from '@material-ui/core/Fade';
 import './Navbar.css'
 import MenuIcon from '@material-ui/icons/Menu';
+import { Link } from 'react-router-dom';
 
 export default function Open() {
   const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
@@ -31,9 +32,22 @@ export default function Open() {
         onClose={handleClose}
         TransitionComponent={Fade}
       >
-        <MenuItem onClick={handleClose}>Postagens</MenuItem>
-        <MenuItem onClick={handleClose}>Temas</MenuItem>
-        <MenuItem onClick={handleClose}>Cadastrar Tema</MenuItem>
+        <Link to='/produtos' className='text-decorator-none'>
+        <MenuItem onClick={handleClose}>Produtos</MenuItem>
+        </Link>
+
+        <Link to='/categorias' className='text-decorator-none'>
+        <MenuItem onClick={handleClose}>Categorias</MenuItem>
+        </Link>
+
+        <Link to='/formularioCategoria' className='text-decorator-none'>
+        <MenuItem onClick={handleClose}>Cadastrar Categorias</MenuItem>
+        </Link>
+
+        <Link to='/atualizarproduto' className='text-decorator-none'>
+        <MenuItem onClick={handleClose}>Cadastrar produto</MenuItem>
+        </Link>
+
       </Menu>
     </div>
   );

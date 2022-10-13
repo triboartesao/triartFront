@@ -12,8 +12,8 @@ function ListaProdutos() {
     let navigate = useNavigate();
     const [produtos, setProdutos] = useState<Produto[]>([])
     const token = useSelector<TokenState, TokenState['tokens']>(
-    (state)=> state.tokens
-) 
+      (state)=> state.tokens
+    ) 
 
 useEffect(() => {
   if (token === ''){
@@ -31,6 +31,7 @@ async function getProdutos() {
 useEffect(() => {
   getProdutos()
 }, [produtos.length])
+
   return (
     <Grid>
        {
