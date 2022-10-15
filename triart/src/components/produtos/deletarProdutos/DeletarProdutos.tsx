@@ -6,7 +6,7 @@ import { useNavigate, useParams } from 'react-router-dom'
 import Produto from '../../../models/Produto';
 import { buscaId, deleteId, post } from '../../../services/Service';
 import { TokenState } from '../../../store/tokens/TokensReducer';
-
+import { toast } from 'react-toastify';
 
 
  function DeletarProdutos() {
@@ -46,7 +46,16 @@ import { TokenState } from '../../../store/tokens/TokensReducer';
         'Authorization': token
       }
     });
-    alert('Produto deletado com sucesso!!')
+    toast.success('Produto deletado com sucesso!', {
+      position: "top-right",
+      autoClose: 2000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: false,
+      draggable: false,
+      theme: "colored",
+      progress: undefined, 
+    } ); 
   }
 
   function nao () {

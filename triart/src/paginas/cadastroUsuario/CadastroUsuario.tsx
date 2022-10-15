@@ -11,7 +11,7 @@ import VisibilityOff from '@mui/icons-material/VisibilityOff';
 import OutlinedInput from '@mui/material/OutlinedInput';
 import IconButton from '@mui/material/IconButton';
 import './CadastroUsuario.css';
-
+import { toast } from "react-toastify";
 
 interface State {
   password: string;
@@ -55,14 +55,39 @@ function Cadastrar() {
     if(confirmarSenha === userCadastrar.senha && userCadastrar.senha.length >= 8){
       try {
         await cadastroUsuario('usuarios/cadastrar', userCadastrar, setUserResult);
-        alert('Usuário criado com sucesso!!! Efetue o Login.');
+        toast.success('Usuário criado com sucesso!!! Efetue o Login.', {
+          position: "top-right",
+          autoClose: 2000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: false,
+          draggable: false,
+          theme: "colored",
+          progress: undefined, 
+        } ); 
       } catch (error) {
-        alert('Falha ao cadastrar o usuário. Por favor, confira os campos');
+        toast.error('Falha ao cadastrar o usuário. Por favor, confira os campos', {
+          position: "top-right",
+          autoClose: 2000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: false,
+          draggable: false,
+          theme: "colored",
+          progress: undefined, 
+        } ); 
       }
     } else {
-      alert(
-        'Senhas divergentes, ou menores que 8 caracteres. Por favor, verifique os campos.'
-      );
+      toast.error('Senhas divergentes, ou menores que 8 caracteres. Por favor, verifique os campos.', {
+        position: "top-right",
+        autoClose: 2000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: false,
+        draggable: false,
+        theme: "colored",
+        progress: undefined, 
+      } ); 
     }
   }
 

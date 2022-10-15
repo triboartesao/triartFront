@@ -6,6 +6,7 @@ import { useNavigate, useParams } from 'react-router-dom';
 import Categoria from '../../../models/Categoria';
 import { buscaId, deleteId } from '../../../services/Service';
 import { TokenState } from '../../../store/tokens/TokensReducer';
+import { toast } from 'react-toastify';
 
 function DeletarCategoria() {
     let navigate = useNavigate();
@@ -42,7 +43,16 @@ function DeletarCategoria() {
           'Authorization': token
         }
       })
-      alert('Tema apagado com sucesso');
+      toast.success('Tema apagado com sucesso', {
+        position: "top-right",
+        autoClose: 2000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: false,
+        draggable: false,
+        theme: "colored",
+        progress: undefined, 
+      } ); 
       navigate('/categorias')
     }
   
