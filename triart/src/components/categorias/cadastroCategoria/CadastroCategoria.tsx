@@ -6,7 +6,7 @@ import { Link, useNavigate, useParams } from 'react-router-dom';
 import Categoria from '../../../models/Categoria';
 import { buscaId, post, put } from '../../../services/Service';
 import { TokenState } from '../../../store/tokens/TokensReducer';
-
+import { toast } from 'react-toastify';
 
 
 function CadastroCategoria() {
@@ -59,14 +59,33 @@ const [categoria, setCategoria] = useState<Categoria>({
                     'Authorization': token
                 }
             })
-            alert('Categoria atualizada com sucesso');
+            toast.success('Categoria atualizado com sucesso', {
+              position: "top-right",
+              autoClose: 2000,
+              hideProgressBar: false,
+              closeOnClick: true,
+              pauseOnHover: false,
+              draggable: false,
+              theme: "colored",
+              progress: undefined, 
+            } ); 
+            
         } else {
             post(`/categorias`, categoria, setCategoria, {
                 headers: {
                     'Authorization': token
                 }
             })
-            alert('Categoria cadastrada com sucesso');
+            toast.success('Categoria cadastrada com sucesso', {
+              position: "top-right",
+              autoClose: 2000,
+              hideProgressBar: false,
+              closeOnClick: true,
+              pauseOnHover: false,
+              draggable: false,
+              theme: "colored",
+              progress: undefined, 
+            } ); 
         }
         back()
 

@@ -15,11 +15,14 @@ import CadastroProdutos from './components/produtos/cadastroProdutos/CadastroPro
 import { Provider } from 'react-redux';
 import store from './store/Store';
 import DeletarCategoria from './components/categorias/deletarCategoria/DeletarCategoria';
+import { ToastContainer } from 'react-toastify/dist/components';
+import 'react-toastify/dist/ReactToastify.css';
 
 function App() {
   return (
 
     <Provider store={store}>
+      <ToastContainer />
     <BrowserRouter>
       
         <Navbar />
