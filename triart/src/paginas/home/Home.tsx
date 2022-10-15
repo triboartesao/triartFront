@@ -2,7 +2,9 @@ import React from 'react'
 
 function Home() {
   return (
-    <div>Home</div>
+    <div className='imgFundoHome'>
+      <img src="https://i.imgur.com/UKOR82b.jpg" width='100%' alt="Fundo Home" />
+    </div>
   )
 }
 
