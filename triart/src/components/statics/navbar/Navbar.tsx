@@ -22,6 +22,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { TokenState } from '../../../store/tokens/TokensReducer';
 import { addToken } from '../../../store/tokens/Actions';
 import { toast } from 'react-toastify';
+import { Avatar } from '@material-ui/core';
 
 
 
@@ -115,7 +116,9 @@ export default function Navbar() {
         <IconButton edge="start" className={classes.menuButton} color="inherit" aria-label="menu">
         </IconButton>
         <Typography variant="h6" className={classes.title}>
-          TriArt
+        <div className={classes.root}>
+            <Avatar className='logo' src="https://i.imgur.com/IV47v8s.png"/>
+        </div>
         </Typography>
         
         <ul className='stileul'>

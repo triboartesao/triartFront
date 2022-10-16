@@ -5,6 +5,7 @@ interface Produto {
 id: number;
 nome: string;
 descricao: string;
+foto?: string | null
 quantidade: number;
 preco: number;
 categoria?: Categoria | null
