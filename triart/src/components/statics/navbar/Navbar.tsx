@@ -75,7 +75,7 @@ export default function Navbar() {
     <div className={classes.root}>
       <FormGroup>
       </FormGroup>
-      <AppBar position="static" className='style' style={{backgroundColor:"#c19158"}}>
+      <AppBar position="static" className='stile' style={{backgroundColor:"#c19158"}}>
         <Toolbar>
           <IconButton edge="start" className={classes.menuButton} color="inherit" aria-label="menu">
           </IconButton>
@@ -93,6 +93,9 @@ export default function Navbar() {
             <FavoriteOutlinedIcon/>
             </IconButton>
 
+            <IconButton>
+            <ShoppingCartIcon/>
+            </IconButton>
 
 
               <IconButton
