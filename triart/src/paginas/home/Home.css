@@ -1,0 +1,64 @@
+@import url(//db.onlinewebfonts.com/c/e662339992c4abf5b43f537391bd3169?family=Candara);
+
+.fraseHome{
+    color: #fff;
+    position: absolute;
+    z-index: 1;
+    top: 53%;
+    left: 10%;
+    font-size: 212%;
+    font-family: "Candara";
+}
+
+.borderDemo {
+    border: 13px solid #fff;
+    font-size: 236%;
+    border-radius: 52px;
+    background-color: transparent;
+    padding: 4%;
+    color: #fff;
+    position: absolute;
+    z-index: 1;
+    top: 68%;
+    left: 10%;
+    font-family: "Candara";
+    transition: 0.2s transform ease-in-out;
+    will-change: transform;
+    overflow: hidden;
+    }
+
+    .borderDemo::after {
+        background-color: rgba(154, 154, 153, 0.578);
+        border-radius: 52px;
+        content: '';
+        display: block;
+        height: 100%;
+        width: 100%;
+        position: absolute;
+        left: 0;
+        top: 0;
+        transform: translate(-100%, 0) rotate(10deg);
+        transform-origin: top left;
+        transition: 0.2s transform ease-out;
+        will-change: transform;
+        z-index: -1;
+        overflow: hidden;
+
+      }
+      .borderDemo:hover::after {
+        transform: translate(0, 0);
+      }
+      .borderDemo:hover {
+        border: 13px solid #000;
+        color: #fff;
+        transform: scale(1.05);
+        will-change: transform;
+      }
+
+
+.bgHome{
+    width: 100%;
+    min-height: 100vh;
+    position:relative;
+}
+

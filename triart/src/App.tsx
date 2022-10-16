@@ -12,11 +12,11 @@ import ListaCategoria from './components/categorias/listaCategoria/ListaCategori
 import CadastroCategoria from './components/categorias/cadastroCategoria/CadastroCategoria';
 import DeletarProdutos from './components/produtos/deletarProdutos/DeletarProdutos';
 import CadastroProdutos from './components/produtos/cadastroProdutos/CadastroProdutos';
-import { Provider } from 'react-redux';
 import store from './store/Store';
 import DeletarCategoria from './components/categorias/deletarCategoria/DeletarCategoria';
-import { ToastContainer } from 'react-toastify/dist/components';
 import 'react-toastify/dist/ReactToastify.css';
+import { Provider } from "react-redux";
+import { ToastContainer } from "react-toastify";
 
 function App() {
   return (
@@ -41,8 +41,6 @@ function App() {
             <Route path="/deletarCategoria/:id" element={<DeletarCategoria/>} />
             <Route path="/formularioCategoria/:id" element={<CadastroCategoria />} />
             <Route path="/atualizarProduto/:id" element={<CadastroProdutos />} />
-
-
           </Routes>
         </div>
         

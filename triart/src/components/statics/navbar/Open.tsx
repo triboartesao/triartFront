@@ -6,6 +6,7 @@ import Fade from '@material-ui/core/Fade';
 import './Navbar.css'
 import MenuIcon from '@material-ui/icons/Menu';
 import { Link } from 'react-router-dom';
+import Home from './../../../paginas/home/Home';
 
 export default function Open() {
   const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
@@ -32,6 +33,11 @@ export default function Open() {
         onClose={handleClose}
         TransitionComponent={Fade}
       >
+
+        <Link to='/Home' className='text-decorator-none'>
+        <MenuItem onClick={handleClose}>Home</MenuItem>
+        </Link>
+
         <Link to='/produtos' className='text-decorator-none'>
         <MenuItem onClick={handleClose}>Produtos</MenuItem>
         </Link>
