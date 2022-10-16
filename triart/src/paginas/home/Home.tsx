@@ -6,7 +6,7 @@ function Home() {
   return (
     <section>
       <div>
-        <h2 className="fraseHome">
+        <h2 className="MsgEmpreendedor">
           Conectando o empreendedor rural com o mundo!
         </h2>
         <Link to="/produtos">
