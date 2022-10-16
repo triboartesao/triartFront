@@ -78,48 +78,48 @@ export default function Navbar() {
     <div className={classes.root}>
       <FormGroup>
       </FormGroup>
-      <AppBar position="fixed"  style={{backgroundColor:"#c19158", margin:'0%' }}>
+      <AppBar position="fixed"  style={{backgroundColor:"#c19158", height:'12%'}}>
         <Toolbar>
           <IconButton edge="start" className={classes.menuButton} color="inherit" aria-label="menu">
           </IconButton>
-          <Typography className="logo" >
-            <img src="https://i.imgur.com/UDBIW93.png" alt="Logo tribo artesão" width='40%' />
+          <Typography variant="h6" className={classes.title}>
+            TriArt
           </Typography>
           
           <ul className='stileul'>
           <li className='stileli'>
             <a>
               <Link to = "/home" className='tdn'>
-          <Button id='decorButton' variant="outlined" border-color='#fafafa'>Home</Button>
+          <Button variant="outlined" border-color='#fafafa'>Home</Button>
               </Link>
           </a>
           </li> 
           <li className='stileli'> 
           <a>
               <Link to = "/produtos" className='tdn'>
-          <Button id='decorButton' variant="outlined" border-color='#fafafa'>Produtos</Button>
+          <Button variant="outlined" border-color='#fafafa'>Produtos</Button>
               </Link>
           </a>
           </li> 
           <li className='stileli'> 
           <a>
               <Link to = "/sobre" className='tdn'>
-          <Button id='decorButton' variant="outlined" border-color='#fafafa'>Sobre nós</Button>
+          <Button variant="outlined" border-color='#fafafa'>Sobre nós</Button>
               </Link>
           </a>
           </li> 
           <li className='stileli'> 
           <a>
               <Link to = "/contatos" className='tdn'>
-          <Button id='decorButton' variant="outlined" border-color='#fafafa'>Contato</Button>
+          <Button variant="outlined" border-color='#fafafa'>Contato</Button>
               </Link>
           </a>
           </li> 
           </ul>
           {auth && (
-            <div className='icons'>
+            <div>
 
-            <IconButton>
+                <IconButton>
             <FavoriteOutlinedIcon/>
             </IconButton>
 

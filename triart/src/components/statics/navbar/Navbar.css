@@ -1,22 +1,15 @@
-@import url(//db.onlinewebfonts.com/c/e662339992c4abf5b43f537391bd3169?family=Candara);
-@import url('http://fonts.cdnfonts.com/css/bernadette-3');
 
-.logo{
-  margin-top: 3%;
-}
-
-.icons{
-  display: flex;
-}
 
  .tdn {
    text-decoration: none;
  }
 
  .stileul {
+   padding-top: 2%;
    display: inline-flex;
-   padding-right: 25%;
+   padding-right: 20%;
    list-style-type: none;
+   margin-right: 4%;
    align-content: space-between;
    white-space: nowrap;
    color: #fff;
@@ -28,11 +21,6 @@
    border-radius: 8px;
    color: #fff;
    
- }
-
- #decorButton{
-  font-family: 'Bernadette', sans-serif;
-  color: #fff;
  }
 
  
