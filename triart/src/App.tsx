@@ -42,6 +42,7 @@ function App() {
             <Route path="/formularioCategoria/:id" element={<CadastroCategoria />} />
             <Route path="/atualizarProduto/:id" element={<CadastroProdutos />} />  
             <Route path="/sobre/:id" element={<Sobre />} />
+            <Route path="/sobre" element={<Sobre />} />
           </Routes>
         </div>
         

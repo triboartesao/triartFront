@@ -10,7 +10,7 @@ function Home() {
           Conectando o empreendedor rural com o mundo!
         </h2>
         <Link to="/produtos">
-          <button className="borderDemo">Vá as compras!</button>
+          <button className="borderCompras">Vá as compras!</button>
         </Link>
         <Link to="/produtos">
           <img
