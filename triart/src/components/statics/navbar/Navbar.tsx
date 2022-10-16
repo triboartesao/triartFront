@@ -1,5 +1,5 @@
 import React from 'react';
-import { createStyles, makeStyles, Theme } from '@material-ui/core/styles';
+import { createStyles, makeStyles, Theme, withStyles } from '@material-ui/core/styles';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
@@ -11,8 +11,32 @@ import FormControlLabel from '@material-ui/core/FormControlLabel';
 import FormGroup from '@material-ui/core/FormGroup';
 import MenuItem from '@material-ui/core/MenuItem';
 import Menu from '@material-ui/core/Menu';
-import Open from './Open';
+import Button from '@material-ui/core/Button';
+import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
+import Badge from '@material-ui/core/Badge';
+import FavoriteOutlinedIcon from '@material-ui/icons/FavoriteOutlined';
 
+
+const StyledBadge = withStyles((theme: Theme) =>
+  createStyles({
+    badge: {
+      right: -3,
+      top: 13,
+      border: `2px solid ${theme.palette.background.paper}`,
+      padding: '0 4px',
+    },
+  }),
+)(Badge);
+
+const useButton = makeStyles((theme: Theme) =>
+  createStyles({
+    root: {
+      '& > *': {
+        margin: theme.spacing(1),
+      },
+    },
+  }),
+);
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -28,13 +52,13 @@ const useStyles = makeStyles((theme: Theme) =>
   }),
 );
 
-function Navbar() {
+export default function Navbar() {
   const classes = useStyles();
+  const button = useButton();
   const [auth, setAuth] = React.useState(true);
   const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
   const open = Boolean(anchorEl);
-  
-  
+
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setAuth(event.target.checked);
   };
@@ -50,21 +74,27 @@ function Navbar() {
   return (
     <div className={classes.root}>
       <FormGroup>
-        <FormControlLabel
-          control={<Switch checked={auth} onChange={handleChange} aria-label="login switch" />}
-          label={auth ? 'Logout' : 'Login'}
-        />
       </FormGroup>
-      <AppBar position="static" className="cor-tema">
+      <AppBar position="static" className='style' style={{backgroundColor:"#c19158"}}>
         <Toolbar>
           <IconButton edge="start" className={classes.menuButton} color="inherit" aria-label="menu">
-            <Open />
           </IconButton>
           <Typography variant="h6" className={classes.title}>
             TriArt
           </Typography>
+          <Button variant="outlined">Home</Button>
+          <Button variant="outlined">Produtos</Button>
+          <Button variant="outlined">Sobre nós</Button>
+          <Button variant="outlined">Contato</Button>
           {auth && (
             <div>
+
+                <IconButton>
+            <FavoriteOutlinedIcon/>
+            </IconButton>
+
+
+
               <IconButton
                 aria-label="account of current user"
                 aria-controls="menu-appbar"
@@ -89,8 +119,8 @@ function Navbar() {
                 open={open}
                 onClose={handleClose}
               >
-                <MenuItem onClick={handleClose}>Perfil</MenuItem>
-                <MenuItem onClick={handleClose}>Minha Conta</MenuItem>
+                <MenuItem onClick={handleClose}>Profile</MenuItem>
+                <MenuItem onClick={handleClose}>My account</MenuItem>
               </Menu>
             </div>
           )}
@@ -99,5 +129,3 @@ function Navbar() {
     </div>
   );
 }
-
-export default Navbar;
