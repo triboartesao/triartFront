@@ -4,7 +4,7 @@
 .bgLogo {
   position: absolute;
   z-index: 1;
-  top: 18%;
+  top: 40%;
   left: 63%;
   width: 28%;
 }
@@ -22,7 +22,7 @@
   z-index: 1;
   top: 53%;
   left: 10%;
-  font-size: 212%;
+  font-size: 150%;
   font-family: 'Bernadette', sans-serif;
 }
 
