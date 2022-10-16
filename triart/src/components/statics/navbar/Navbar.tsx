@@ -15,6 +15,9 @@ import Button from '@material-ui/core/Button';
 import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
 import Badge from '@material-ui/core/Badge';
 import FavoriteOutlinedIcon from '@material-ui/icons/FavoriteOutlined';
+import { Link } from 'react-router-dom';
+import "./Navbar.css"
+import { height } from '@mui/system';
 
 
 const StyledBadge = withStyles((theme: Theme) =>
@@ -75,17 +78,44 @@ export default function Navbar() {
     <div className={classes.root}>
       <FormGroup>
       </FormGroup>
-      <AppBar position="static" className='stile' style={{backgroundColor:"#c19158"}}>
+      <AppBar position="fixed"  style={{backgroundColor:"#c19158", height:'12%'}}>
         <Toolbar>
           <IconButton edge="start" className={classes.menuButton} color="inherit" aria-label="menu">
           </IconButton>
           <Typography variant="h6" className={classes.title}>
             TriArt
           </Typography>
-          <Button variant="outlined">Home</Button>
-          <Button variant="outlined">Produtos</Button>
-          <Button variant="outlined">Sobre nós</Button>
-          <Button variant="outlined">Contato</Button>
+          
+          <ul className='stileul'>
+          <li className='stileli'>
+            <a>
+              <Link to = "/home" className='tdn'>
+          <Button variant="outlined" border-color='#fafafa'>Home</Button>
+              </Link>
+          </a>
+          </li> 
+          <li className='stileli'> 
+          <a>
+              <Link to = "/produtos" className='tdn'>
+          <Button variant="outlined" border-color='#fafafa'>Produtos</Button>
+              </Link>
+          </a>
+          </li> 
+          <li className='stileli'> 
+          <a>
+              <Link to = "/sobre" className='tdn'>
+          <Button variant="outlined" border-color='#fafafa'>Sobre nós</Button>
+              </Link>
+          </a>
+          </li> 
+          <li className='stileli'> 
+          <a>
+              <Link to = "/contatos" className='tdn'>
+          <Button variant="outlined" border-color='#fafafa'>Contato</Button>
+              </Link>
+          </a>
+          </li> 
+          </ul>
           {auth && (
             <div>
 

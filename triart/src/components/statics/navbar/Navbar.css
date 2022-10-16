@@ -1,8 +1,26 @@
-.stile {
-    height: 100vh;
- 
+
+
+ .tdn {
+   text-decoration: none;
  }
 
- .cor-tema {
-    background-color: #c19158 !important;
+ .stileul {
+   padding-top: 2%;
+   display: inline-flex;
+   padding-right: 20%;
+   list-style-type: none;
+   margin-right: 4%;
+   align-content: space-between;
+   white-space: nowrap;
+   color: #fff;
  }
+
+ .stileli {
+   margin-right: 14%;
+   border-style: solid;
+   border-radius: 8px;
+   color: #fff;
+   
+ }
+
+ 
