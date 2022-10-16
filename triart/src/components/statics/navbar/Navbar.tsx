@@ -15,9 +15,16 @@ import Button from '@material-ui/core/Button';
 import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
 import Badge from '@material-ui/core/Badge';
 import FavoriteOutlinedIcon from '@material-ui/icons/FavoriteOutlined';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import "./Navbar.css"
 import { height } from '@mui/system';
+import { useDispatch, useSelector } from 'react-redux';
+import { TokenState } from '../../../store/tokens/TokensReducer';
+import { addToken } from '../../../store/tokens/Actions';
+import { toast } from 'react-toastify';
+
+
+
 
 
 const StyledBadge = withStyles((theme: Theme) =>
@@ -56,6 +63,31 @@ const useStyles = makeStyles((theme: Theme) =>
 );
 
 export default function Navbar() {
+  let navigate = useNavigate();
+  const token = useSelector<TokenState, TokenState['tokens']>(
+    (state)=> state.tokens
+  ) 
+
+  const dispatch=useDispatch();
+  
+  function goLogout() {
+    dispatch(addToken(''))
+    toast.info('Logout efetuado com sucesso!!', {
+      position: 'top-right',
+      autoClose: 2000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: false,
+      draggable: false,
+      theme: 'colored',
+      progress: undefined,
+    });
+      navigate('/login')
+
+  }
+
+
+
   const classes = useStyles();
   const button = useButton();
   const [auth, setAuth] = React.useState(true);
@@ -76,89 +108,89 @@ export default function Navbar() {
 
   return (
     <div className={classes.root}>
-      <FormGroup>
-      </FormGroup>
-      <AppBar position="fixed"  style={{backgroundColor:"#c19158", height:'12%'}}>
-        <Toolbar>
-          <IconButton edge="start" className={classes.menuButton} color="inherit" aria-label="menu">
+    <FormGroup>
+    </FormGroup>
+    <AppBar position="fixed"  style={{backgroundColor:"#c19158", height:'12%'}}>
+      <Toolbar>
+        <IconButton edge="start" className={classes.menuButton} color="inherit" aria-label="menu">
+        </IconButton>
+        <Typography variant="h6" className={classes.title}>
+          TriArt
+        </Typography>
+        
+        <ul className='stileul'>
+        <li className='stileli'>
+          <a>
+            <Link to = "/home" className='tdn'>
+        <Button variant="outlined" border-color='#fafafa'>Home</Button>
+            </Link>
+        </a>
+        </li> 
+        <li className='stileli'> 
+        <a>
+            <Link to = "/produtos" className='tdn'>
+        <Button variant="outlined" border-color='#fafafa'>Produtos</Button>
+            </Link>
+        </a>
+        </li> 
+        <li className='stileli'> 
+        <a>
+            <Link to = "/sobre" className='tdn'>
+        <Button variant="outlined" border-color='#fafafa'>Sobre nós</Button>
+            </Link>
+        </a>
+        </li> 
+        <li className='stileli'> 
+        <a>
+            <Link to = "/contatos" className='tdn'>
+        <Button variant="outlined" border-color='#fafafa'>Contato</Button>
+            </Link>
+        </a>
+        </li> 
+        </ul>
+        {auth && (
+          <div>
+
+              <IconButton>
+          <FavoriteOutlinedIcon/>
           </IconButton>
-          <Typography variant="h6" className={classes.title}>
-            TriArt
-          </Typography>
-          
-          <ul className='stileul'>
-          <li className='stileli'>
-            <a>
-              <Link to = "/home" className='tdn'>
-          <Button variant="outlined" border-color='#fafafa'>Home</Button>
-              </Link>
-          </a>
-          </li> 
-          <li className='stileli'> 
-          <a>
-              <Link to = "/produtos" className='tdn'>
-          <Button variant="outlined" border-color='#fafafa'>Produtos</Button>
-              </Link>
-          </a>
-          </li> 
-          <li className='stileli'> 
-          <a>
-              <Link to = "/sobre" className='tdn'>
-          <Button variant="outlined" border-color='#fafafa'>Sobre nós</Button>
-              </Link>
-          </a>
-          </li> 
-          <li className='stileli'> 
-          <a>
-              <Link to = "/contatos" className='tdn'>
-          <Button variant="outlined" border-color='#fafafa'>Contato</Button>
-              </Link>
-          </a>
-          </li> 
-          </ul>
-          {auth && (
-            <div>
 
-                <IconButton>
-            <FavoriteOutlinedIcon/>
+          <IconButton>
+          <ShoppingCartIcon/>
+          </IconButton>
+
+
+            <IconButton
+              aria-label="account of current user"
+              aria-controls="menu-appbar"
+              aria-haspopup="true"
+              onClick={handleMenu}
+              color="inherit"
+            >
+              <AccountCircle />
             </IconButton>
-
-            <IconButton>
-            <ShoppingCartIcon/>
-            </IconButton>
-
-
-              <IconButton
-                aria-label="account of current user"
-                aria-controls="menu-appbar"
-                aria-haspopup="true"
-                onClick={handleMenu}
-                color="inherit"
-              >
-                <AccountCircle />
-              </IconButton>
-              <Menu
-                id="menu-appbar"
-                anchorEl={anchorEl}
-                anchorOrigin={{
-                  vertical: 'top',
-                  horizontal: 'right',
-                }}
-                keepMounted
-                transformOrigin={{
-                  vertical: 'top',
-                  horizontal: 'right',
-                }}
-                open={open}
-                onClose={handleClose}
-              >
-                <MenuItem onClick={handleClose}>Profile</MenuItem>
-                <MenuItem onClick={handleClose}>My account</MenuItem>
-              </Menu>
-            </div>
-          )}
-        </Toolbar>
-      </AppBar>
-    </div>
+            <Menu
+              id="menu-appbar"
+              anchorEl={anchorEl}
+              anchorOrigin={{
+                vertical: 'top',
+                horizontal: 'right',
+              }}
+              keepMounted
+              transformOrigin={{
+                vertical: 'top',
+                horizontal: 'right',
+              }}
+              open={open}
+              onClose={handleClose}
+            >
+              <MenuItem onClick={handleClose}>Meu perfil</MenuItem>
+              <MenuItem onClick={goLogout}>Logout</MenuItem>
+            </Menu>
+          </div>
+        )}
+      </Toolbar>
+    </AppBar>
+  </div>
   );
 }
