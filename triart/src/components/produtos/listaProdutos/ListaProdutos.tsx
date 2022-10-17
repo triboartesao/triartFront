@@ -54,9 +54,6 @@ useEffect(() => {
             {produtos.preco}
             </Typography>
             <Typography variant="body2" component="p">
-             {produtos.foto}    
-            </Typography>
-            <Typography variant="body2" component="p">
             {produtos.categoria?.tipo}
             </Typography>
             <Typography variant="body2" component="p">

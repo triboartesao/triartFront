@@ -22,7 +22,7 @@ import { ToastContainer } from "react-toastify";
 function App() {
   return (
 
-    <Provider store={store}>
+    <Provider store={store}> 
       <ToastContainer />
     <BrowserRouter>
       
