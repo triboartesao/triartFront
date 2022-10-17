@@ -1,11 +1,24 @@
-import { Button, Card, CardActions, CardContent, Typography } from '@material-ui/core';
+import { Card, CardActionArea, CardMedia, CardContent, Typography, CardActions, Button, makeStyles } from '@material-ui/core';
 import { Box, Grid } from '@mui/material';
 import React, { useEffect, useState } from 'react'
 import { useSelector } from 'react-redux';
 import { Link, useNavigate } from 'react-router-dom';
+import { toast } from 'react-toastify';
 import Produto from '../../../models/Produto';
 import { busca } from '../../../services/Service';
 import { TokenState } from '../../../store/tokens/TokensReducer';
+import "./ListaProdutos.css";
+
+const useStyles = makeStyles({
+  root: {
+    maxWidth: 345,
+  },
+  media: {
+    height: 350,
+    objectFit: 'contain',
+    width: 'auto',
+  },
+});
 
 function ListaProdutos() {
 
@@ -16,11 +29,20 @@ function ListaProdutos() {
     ) 
 
 useEffect(() => {
-  if (token === ''){
-    alert('Erro de conexão, realize o Login novamente')
-    navigate('/login')
+  if (token === '') {
+    toast.error('Erro de conexão, realize o Login novamente', {
+      position: "top-right",
+      autoClose: 2000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: false,
+      draggable: false,
+      theme: "colored",
+      progress: undefined, 
+    } ); 
+    navigate('/login');
   }
-}, [token])
+}, [token]);
 
 async function getProdutos() {
   await busca("/produtos", setProdutos, {
@@ -32,59 +54,64 @@ useEffect(() => {
   getProdutos()
 }, [produtos.length])
 
-  return (
-    <Grid>
-       {
-        produtos.map(produtos => (
-      <Box m={2} >
-        <Card variant="outlined">
-          <CardContent>
-            <Typography color="textSecondary" gutterBottom>
-              Produtos
-            </Typography>
-            <Typography variant="h5" component="h2">
-            {produtos.nome}
-            </Typography>
-            <Typography variant="body2" component="p">
-            {produtos.descricao}
-            </Typography>
-            <Typography variant="body2" component="p">
-            {produtos.quantidade}
-            <Typography variant="body2" component="p">
-            {produtos.preco}
-            </Typography>
-            <Typography variant="body2" component="p">
-            {produtos.categoria?.tipo}
-            </Typography>
-            <Typography variant="body2" component="p">
-            {produtos.usuario?.nome}
-            </Typography>
-            </Typography>
-          </CardContent>
-          <CardActions>
-            <Box display="flex" justifyContent="center" mb={1.5}>
+const classes = useStyles();
 
-              <Link to={`/atualizarProduto/${produtos.id}`}>
+
+return (
+  <div className="listaCards">
+    {produtos.map((produtos) => (
+      <Card className='container-card'>
+          <CardActionArea>
+          <Link to={`/produto/${produtos.id}`} className='text-decorator-none' >
+            <CardMedia
+              className={classes.media}
+              image={produtos.foto}
+              title={produtos.nome}
+            />
+            <CardContent>
+              <Typography gutterBottom variant="h5" component="h2" className='titleDescription'>
+                {produtos.nome}
+              </Typography>
+              <Typography
+                variant="body2"
+                color="textSecondary"
+                component="p"
+                className="productDescription"
+              >
+                {produtos.descricao}
+              </Typography>
+            </CardContent>
+            </Link>
+          </CardActionArea>
+          <CardActions className='cardActions'>
+            <Link to={`/produto/${produtos.id}`} className='text-decorator-none'>
+              <Button size="small" color="primary" variant="contained" fullWidth className='btn-lista'>
+                Ver mais
+              </Button>
+            </Link>
+            <Box display="flex" justifyContent="center" mt={1.5} mb={1.5}>
+
+              <Link to={`/atualizarProduto/${produtos.id}`} className="text-decorator-none" >
                 <Box mx={1}>
                   <Button variant="contained" className="marginLeft" size='small' color="primary" >
-                    Atualizar
+                    atualizar
                   </Button>
                 </Box>
-              </Link>
+              </Link> 
               <Link to={`/deletarProduto/${produtos.id}`} className="text-decorator-none">
                 <Box mx={1}>
                   <Button variant="contained" size='small' color="secondary">
-                    Deletar
+                    deletar
                   </Button>
                 </Box>
               </Link>
             </Box>
           </CardActions>
         </Card>
-      </Box>
-              ))
-            }
-      </Grid>)
+      
+    ))}
+  </div>
+);
 }
 
 export default ListaProdutos

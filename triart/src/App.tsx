@@ -12,14 +12,18 @@ import ListaCategoria from './components/categorias/listaCategoria/ListaCategori
 import CadastroCategoria from './components/categorias/cadastroCategoria/CadastroCategoria';
 import DeletarProdutos from './components/produtos/deletarProdutos/DeletarProdutos';
 import CadastroProdutos from './components/produtos/cadastroProdutos/CadastroProdutos';
-import { Provider } from 'react-redux';
 import store from './store/Store';
 import DeletarCategoria from './components/categorias/deletarCategoria/DeletarCategoria';
+import 'react-toastify/dist/ReactToastify.css';
+import { Provider } from "react-redux";
+import { ToastContainer } from "react-toastify";
+import Contato from './paginas/contato/Contato';
 
 function App() {
   return (
 
     <Provider store={store}>
+      <ToastContainer />
     <BrowserRouter>
       
         <Navbar />
@@ -36,9 +40,11 @@ function App() {
             <Route path="/atualizarProduto" element={<CadastroProdutos />} />
             <Route path="/deletarProduto/:id" element={<DeletarProdutos/>} />
             <Route path="/deletarCategoria/:id" element={<DeletarCategoria/>} />
-            
-
-
+            <Route path="/formularioCategoria/:id" element={<CadastroCategoria />} />
+            <Route path="/atualizarProduto/:id" element={<CadastroProdutos />} />  
+            <Route path="/sobre/:id" element={<Sobre />} />
+            <Route path="/sobre" element={<Sobre />} />
+            <Route path="/contato" element={<Contato/>} />
           </Routes>
         </div>
         

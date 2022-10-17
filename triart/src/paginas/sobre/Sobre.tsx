@@ -2,7 +2,10 @@ import React from 'react'
 
 function Sobre() {
   return (
-    <div>Sobre</div>
+    <h1>Olá</h1>
+
+    /* Inserir um campo para falar sobre o objetivo */
+
   )
 }
 

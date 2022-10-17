@@ -7,6 +7,7 @@ import Categoria from '../../../models/Categoria';
 import Produto from '../../../models/Produto';
 import { busca, buscaId, post, put } from '../../../services/Service';
 import { TokenState } from '../../../store/tokens/TokensReducer';
+import { toast } from 'react-toastify';
 
 function CadastroProdutos() {
     let navigate = useNavigate();
@@ -25,6 +26,7 @@ function CadastroProdutos() {
       id: 0,
       nome: '',
       descricao: '',
+      foto: '',
       quantidade: 0,
       preco: 0,
       categoria: null,
@@ -33,7 +35,16 @@ function CadastroProdutos() {
   
     useEffect(() => {
       if (token === '') {
-        alert('Erro de conexão, realize o Login novamente');
+        toast.error('Erro de conexão, realize o Login novamente', {
+          position: "top-right",
+          autoClose: 2000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: false,
+          draggable: false,
+          theme: "colored",
+          progress: undefined, 
+        } ); 
         navigate('/login');
       }
     }, [token]);
@@ -92,14 +103,34 @@ function CadastroProdutos() {
                 'Authorization': token
             }
         })
-        alert('Produto atualizado com sucesso');
-    } else {
+
+        toast.success('Produto atualizado com sucesso', {
+          position: "top-right",
+          autoClose: 2000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: false,
+          draggable: false,
+          theme: "colored",
+          progress: undefined, 
+        } ); 
+        
+       } else {
         post(`/produtos`, produtos, setProdutos, {
             headers: {
                 'Authorization': token
             }
         })
-        alert('Produto cadastrado com sucesso');
+        toast.success('Produto cadastrado com sucesso', {
+          position: "top-right",
+          autoClose: 2000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: false,
+          draggable: false,
+          theme: "colored",
+          progress: undefined, 
+        } ); 
     }
     back()
 
@@ -115,6 +146,7 @@ function back() {
           <Typography variant="h3" color="textSecondary" component="h1" align="center" >Formulário de cadastro de Produtos</Typography>
           <TextField value={produtos.nome} onChange={(event: ChangeEvent<HTMLInputElement>) => updatedProduto(event)} id="nome" label="nome" variant="outlined" name="nome" margin="normal" fullWidth />
           <TextField value={produtos.descricao} onChange={(event: ChangeEvent<HTMLInputElement>) => updatedProduto(event)} id="descricao" label="descrição" name="descricao" variant="outlined" margin="normal" fullWidth />
+          <TextField value={produtos.foto} onChange={(event: ChangeEvent<HTMLInputElement>) => updatedProduto(event)} id="foto" label="foto" name="foto" variant="outlined" margin="normal" fullWidth />
           <TextField value={produtos.quantidade} onChange={(event: ChangeEvent<HTMLInputElement>) => updatedProduto(event)} id="quantidade" label="quantidade" name="quantidade" variant="outlined" margin="normal" fullWidth />
           <TextField value={produtos.preco} onChange={(event: ChangeEvent<HTMLInputElement>) => updatedProduto(event)} id="preco" label="preço" name="preco" variant="outlined" margin="normal" fullWidth />
          
