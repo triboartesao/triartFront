@@ -3,6 +3,7 @@ import { Box, Grid } from '@mui/material';
 import React, { useEffect, useState } from 'react'
 import { useSelector } from 'react-redux';
 import { Link, useNavigate } from 'react-router-dom';
+import { toast } from 'react-toastify';
 import Produto from '../../../models/Produto';
 import { busca } from '../../../services/Service';
 import { TokenState } from '../../../store/tokens/TokensReducer';
@@ -28,11 +29,20 @@ function ListaProdutos() {
     ) 
 
 useEffect(() => {
-  if (token === ''){
-    alert('Erro de conexão, realize o Login novamente')
-    navigate('/login')
+  if (token === '') {
+    toast.error('Erro de conexão, realize o Login novamente', {
+      position: "top-right",
+      autoClose: 2000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: false,
+      draggable: false,
+      theme: "colored",
+      progress: undefined, 
+    } ); 
+    navigate('/login');
   }
-}, [token])
+}, [token]);
 
 async function getProdutos() {
   await busca("/produtos", setProdutos, {
@@ -79,6 +89,23 @@ return (
                 Ver mais
               </Button>
             </Link>
+            <Box display="flex" justifyContent="center" mb={1.5}>
+
+              <Link to={`/atualizarProduto/${produtos.id}`} className="text-decorator-none" >
+                <Box mx={1}>
+                  <Button variant="contained" className="marginLeft" size='small' color="primary" >
+                    atualizar
+                  </Button>
+                </Box>
+              </Link> 
+              <Link to={`/deletarProduto/${produtos.id}`} className="text-decorator-none">
+                <Box mx={1}>
+                  <Button variant="contained" size='small' color="secondary">
+                    deletar
+                  </Button>
+                </Box>
+              </Link>
+            </Box>
           </CardActions>
         </Card>
       
