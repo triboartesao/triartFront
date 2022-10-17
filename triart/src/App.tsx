@@ -22,7 +22,7 @@ import Contato from './paginas/contato/Contato';
 function App() {
   return (
 
-    <Provider store={store}>
+    <Provider store={store}> 
       <ToastContainer />
     <BrowserRouter>
       

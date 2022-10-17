@@ -54,7 +54,41 @@ useEffect(() => {
   getProdutos()
 }, [produtos.length])
 
+<<<<<<< HEAD
 const classes = useStyles();
+=======
+  return (
+    <Grid>
+       {
+        produtos.map(produtos => (
+      <Box m={2} >
+        <Card variant="outlined">
+          <CardContent>
+            <Typography color="textSecondary" gutterBottom>
+              Produtos
+            </Typography>
+            <Typography variant="h5" component="h2">
+            {produtos.nome}
+            </Typography>
+            <Typography variant="body2" component="p">
+            {produtos.descricao}
+            </Typography>
+            <Typography variant="body2" component="p">
+            {produtos.quantidade}
+            <Typography variant="body2" component="p">
+            {produtos.preco}
+            </Typography>
+            <Typography variant="body2" component="p">
+            {produtos.categoria?.tipo}
+            </Typography>
+            <Typography variant="body2" component="p">
+            {produtos.usuario?.nome}
+            </Typography>
+            </Typography>
+          </CardContent>
+          <CardActions>
+            <Box display="flex" justifyContent="center" mb={1.5}>
+>>>>>>> footer
 
 
 return (
