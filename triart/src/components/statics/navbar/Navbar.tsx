@@ -218,6 +218,9 @@ export default function Navbar() {
               >
                 <MenuItem onClick={handleClose}>Meu perfil</MenuItem>
                 <MenuItem onClick={goLogout}>Logout</MenuItem>
+                <Link to="/formularioCategoria" className="tdn">
+                <MenuItem>Cadastrar Produtos</MenuItem>
+                </Link>
               </Menu>
             </section>
           )}
