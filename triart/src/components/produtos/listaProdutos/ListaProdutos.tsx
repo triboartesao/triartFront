@@ -6,6 +6,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import Produto from '../../../models/Produto';
 import { busca } from '../../../services/Service';
 import { TokenState } from '../../../store/tokens/TokensReducer';
+import "./ListaProdutos.css";
 
 const useStyles = makeStyles({
   root: {
