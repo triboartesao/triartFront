@@ -1,10 +1,12 @@
 import React from "react";
 import "./Home.css";
 import { Link } from "react-router-dom";
+import "./carousel";
 
 function Home() {
   return (
-    <section>
+    <main>    
+      <section>
       <div>
         <h2 className="MsgEmpreendedor">
           Conectando o empreendedor rural com o mundo!
@@ -28,6 +30,23 @@ function Home() {
         />
       </div>
     </section>
+
+    {/* // CAROUSEL RESPONSIVE COM CSS E JS */}
+    <section className="carousel">
+      <div className="container-slider">
+    <div className="slides"></div>
+    <button className="btn-slide prev">
+      <i className="fa fa-arrow-left" aria-hidden="true"></i>
+    </button>
+    <button className="btn-slide next">
+      <i className="fa fa-arrow-right" aria-hidden="true"></i>
+    </button>
+    <div className="container-dots"></div>
+  </div>
+  </section>
+  </main>
+
+
   );
 }
 

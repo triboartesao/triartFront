@@ -155,7 +155,6 @@ const handleMouseDownPassword = (event: React.MouseEvent<HTMLButtonElement>) => 
             <Link to= '/cadastrar'>
                <Typography variant='subtitle1' gutterBottom align='center' className='textos1'>Cadastre-se</Typography>
              </Link>
-                       
           </Box>
         </Box>
 

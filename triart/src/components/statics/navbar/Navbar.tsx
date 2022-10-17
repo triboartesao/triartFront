@@ -109,7 +109,7 @@ export default function Navbar() {
     <div className={classes.root}>
       <FormGroup></FormGroup>
       <AppBar
-        position="fixed"
+        position="sticky"
         style={{ backgroundColor: "#c19158", margin: "0%", width:'100%' }}
       >
         <Toolbar>
@@ -171,7 +171,7 @@ export default function Navbar() {
             </li>
             <li className="stileli">
               <a>
-                <Link to="/contatos" className="tdn">
+                <Link to="/contato" className="tdn">
                   <Button
                     id="decorButton"
                     variant="outlined"

@@ -5,7 +5,6 @@ import Footer from './components/statics/footer/Footer';
 import Home from './paginas/home/Home';
 import Sobre from './paginas/sobre/Sobre';
 import Login from './paginas/login/Login';
-import Contato from './paginas/contato/Contato';
 import CadastroUsuario from './paginas/cadastroUsuario/CadastroUsuario';
 import './App.css';
 import ListaProdutos from './components/produtos/listaProdutos/ListaProdutos';
@@ -18,6 +17,7 @@ import DeletarCategoria from './components/categorias/deletarCategoria/DeletarCa
 import 'react-toastify/dist/ReactToastify.css';
 import { Provider } from "react-redux";
 import { ToastContainer } from "react-toastify";
+import Contato from './paginas/contato/Contato';
 
 function App() {
   return (
@@ -44,7 +44,7 @@ function App() {
             <Route path="/atualizarProduto/:id" element={<CadastroProdutos />} />  
             <Route path="/sobre/:id" element={<Sobre />} />
             <Route path="/sobre" element={<Sobre />} />
-            <Route path="/contato" element={<Contato />} />
+            <Route path="/contato" element={<Contato/>} />
           </Routes>
         </div>
         
