@@ -1,10 +1,10 @@
 import React from 'react'
 
-function Sobre() {
+function Contato() {
   return (
+   
     <h1>Olá</h1>
-
   )
 }
 
-export default Sobre
+export default Contato
