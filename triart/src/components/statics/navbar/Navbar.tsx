@@ -110,7 +110,7 @@ export default function Navbar() {
       <FormGroup></FormGroup>
       <AppBar
         position="fixed"
-        style={{ backgroundColor: "#c19158", margin: "0%" }}
+        style={{ backgroundColor: "#c19158", margin: "0%", width:'100%' }}
       >
         <Toolbar>
           
@@ -128,7 +128,7 @@ export default function Navbar() {
               width="40%"
             />
           </Typography>
-
+          <nav>
           <ul className="stileul">
             <li className="stileli">
               <a>
@@ -183,8 +183,9 @@ export default function Navbar() {
               </a>
             </li>
           </ul>
+          </nav>
           {auth && (
-            <div className="icons">
+            <section className="icons">
               <IconButton>
                 <FavoriteOutlinedIcon />
               </IconButton>
@@ -218,7 +219,7 @@ export default function Navbar() {
                 <MenuItem onClick={handleClose}>Meu perfil</MenuItem>
                 <MenuItem onClick={goLogout}>Logout</MenuItem>
               </Menu>
-            </div>
+            </section>
           )}
         </Toolbar>
       </AppBar>
