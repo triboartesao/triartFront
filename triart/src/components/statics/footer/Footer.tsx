@@ -15,7 +15,7 @@ function Footer() {
   
     var footerComponent;
   
-    if(token != "") {
+    if(token === "") {
       footerComponent = <Grid
       container
       direction="row"

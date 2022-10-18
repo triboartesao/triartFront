@@ -1,29 +1,4 @@
 .listaCards {
-<<<<<<< HEAD
-  display: flex;
-  flex-wrap: wrap;
-  gap: 2rem;
-  margin-top: 1rem;
-}
-
-.titleDescription {
-  display: -webkit-box;
-  -webkit-line-clamp: 1;
-  -webkit-box-orient: vertical;
-   overflow: hidden;
-}
-
-.productDescription {
-  display: -webkit-box;
-  -webkit-line-clamp: 4;
-  -webkit-box-orient: vertical;
-  overflow: hidden;
-}
-
-.cardActions {
-  display: block !important;
-}
-=======
     display: flex;
     align-items: center;
     flex-wrap: wrap;
@@ -73,4 +48,3 @@
       width: 80%;
     }
   }
->>>>>>> 0998da1899b5dfb0c36110483ccf1cf377e61c5e
