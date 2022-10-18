@@ -9,11 +9,10 @@ import InputLabel from '@mui/material/InputLabel';
 import OutlinedInput from '@mui/material/OutlinedInput';
 import IconButton from '@mui/material/IconButton';
 import { Link, useNavigate } from 'react-router-dom';
-import useLocalStorage from 'react-use-localstorage';
 import { login } from '../../services/Service';
 import UserLogin from '../../models/UserLogin'
 import { useDispatch } from 'react-redux';
-import { addToken } from '../../store/tokens/Actions';
+import { addId, addToken } from '../../store/tokens/Actions';
 import { toast } from 'react-toastify';
 import './Login.css'
 
@@ -27,13 +26,25 @@ function Login() {
   let navigate = useNavigate()
   const dispatch = useDispatch()
   const [token, setToken] = useState('')
+
+
+
   const [userLogin, setUserLogin] = useState<UserLogin>({
     id: 0,
     nome: '',
     usuario: '',
     senha: '',
     foto: '',
-    token: ''
+    token: '',
+  });
+
+  const [respUserLogin, setRespUserLogin] = useState<UserLogin>({
+    id: 0,
+    nome: '',
+    usuario: '',
+    senha: '',
+    foto: '',
+    token: '',
   });
 
   function updateModel(event: ChangeEvent<HTMLInputElement>) {
@@ -46,7 +57,7 @@ function Login() {
   async function conectar(event: ChangeEvent<HTMLFormElement>) {
     event.preventDefault();
     try {
-      await login('usuarios/logar', userLogin, setToken)
+      await login('usuarios/logar', userLogin, setRespUserLogin);
 
       toast.success('Usuário Logado com Sucesso!', {
         position: "top-right",
@@ -72,14 +83,24 @@ function Login() {
     }
   }
 
-
+  /* Metodo de pegar o token e o id do json precisa ser ajustado
+  useEffect(() => {
+    if(respUserLogin.token !==''){
+      dispatch(addToken(respUserLogin.token))
+      dispatch(addId(respUserLogin.id.toString()))
+      navigate('/home');
+    }
+  }, [respUserLogin])*/
 
   useEffect(() => {
     if (token !== '') {
       dispatch(addToken(token))
-      navigate('/home')
+      navigate('/home');
     }
-  }, [token])
+  }, [token]);
+
+
+
 
   const [values, setValues] = React.useState<State>({
     password: '',

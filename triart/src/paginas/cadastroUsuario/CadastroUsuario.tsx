@@ -28,7 +28,7 @@ function Cadastrar() {
     nome: '',
     usuario: '',
     senha: '',
-    // foto: ''
+    foto: ''
   })
 
   const [userResult, setUserResult] = useState<User>({
@@ -36,7 +36,7 @@ function Cadastrar() {
     nome: '',
     usuario: '',
     senha: '',
-    // foto: ''
+    foto: ''
   })
 
   function confirmarSenhaHandle(event: ChangeEvent<HTMLInputElement>) {
