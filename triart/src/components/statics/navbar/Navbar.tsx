@@ -6,48 +6,94 @@ import IconButton from "@mui/material/IconButton";
 import Typography from "@mui/material/Typography";
 import Menu from "@mui/material/Menu";
 import MenuIcon from "@mui/icons-material/Menu";
-import Container from "@mui/material/Container";
-import Avatar from "@mui/material/Avatar";
 import Button from "@mui/material/Button";
 import MenuItem from "@mui/material/MenuItem";
-import AdbIcon from "@mui/icons-material/Adb";
 import "./Navbar.css";
 import FavoriteOutlinedIcon from "@material-ui/icons/FavoriteOutlined";
 import ShoppingCartIcon from "@material-ui/icons/ShoppingCart";
 import { AccountCircle } from "@material-ui/icons";
+import { Link, useNavigate } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import { TokenState } from "../../../store/tokens/TokensReducer";
+import { addToken } from "../../../store/tokens/Actions";
+import { toast } from "react-toastify";
+import { createStyles, makeStyles, Theme } from "@material-ui/core";
 
 const pages = ["Home", "Produtos", "Sobre nos", "Contato"];
-const settings = ["Meu Perfil", "Logout", "Cadastrar Produtos"];
 
-function ResponsiveAppBar() {
+const useStyles = makeStyles((theme: Theme) =>
+  createStyles({
+    root: {
+      flexGrow: 1,
+    },
+    menuButton: {
+      marginRight: theme.spacing(2),
+    },
+    title: {
+      flexGrow: 1,
+    },
+  }),
+);
+
+
+function Navbar() {
+
+  const classes = useStyles();
+
   const [anchorElNav, setAnchorElNav] = React.useState<null | HTMLElement>(
-    null
-  );
-  const [anchorElUser, setAnchorElUser] = React.useState<null | HTMLElement>(
     null
   );
 
   const handleOpenNavMenu = (event: React.MouseEvent<HTMLElement>) => {
     setAnchorElNav(event.currentTarget);
   };
-  const handleOpenUserMenu = (event: React.MouseEvent<HTMLElement>) => {
-    setAnchorElUser(event.currentTarget);
-  };
+
 
   const handleCloseNavMenu = () => {
     setAnchorElNav(null);
   };
 
-  const handleCloseUserMenu = () => {
-    setAnchorElUser(null);
-  };
 
-  const handleMenu = (event: React.MouseEvent<HTMLElement>) => {
-    setAnchorEl(event.currentTarget);
-  };
 
-  const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
-  const open = Boolean(anchorEl);
+  let navigate = useNavigate();
+   const token = useSelector<TokenState, TokenState["tokens"]>(
+   (state) => state.tokens
+ );
+
+ const dispatch = useDispatch();
+ function goLogout() {
+   dispatch(addToken(""));
+   toast.info("Logout efetuado com sucesso!!", {
+     position: "top-right",
+     autoClose: 2000,
+     hideProgressBar: false,
+     closeOnClick: true,
+     pauseOnHover: false,
+     draggable: false,
+     theme: "colored",
+     progress: undefined,
+   });
+   navigate("/login");
+ }
+
+;
+ const [auth, setAuth] = React.useState(true);
+ const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
+ const open = Boolean(anchorEl);
+
+ const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+   setAuth(event.target.checked);
+ };
+
+ const handleMenu = (event: React.MouseEvent<HTMLElement>) => {
+   setAnchorEl(event.currentTarget);
+ };
+
+ const handleClose = () => {
+   setAnchorEl(null);
+ };
+
+
   return (
     <AppBar position="sticky">
       <Box style={{backgroundColor:'#c19158', padding: '.25rem 1.725rem'}} >
@@ -66,7 +112,7 @@ function ResponsiveAppBar() {
               src="https://i.imgur.com/UDBIW93.png"
               alt="Logo tribo artesão"
               width="15%"
-              // className="imgLogo"
+              className="imgLogo"
             />
           </Typography>
 
@@ -101,7 +147,8 @@ function ResponsiveAppBar() {
             >
               {pages.map((page) => (
                 <MenuItem key={page} onClick={handleCloseNavMenu}>
-                  <Typography id="decorButton"  textAlign="center" >{page}</Typography>
+                  <Typography id="decorButton"  textAlign="center" >{page}
+                  <Link to="/home" className="tdn"></Link> </Typography>
                 </MenuItem>
               ))}
             </Menu>
@@ -143,48 +190,42 @@ function ResponsiveAppBar() {
                 <ShoppingCartIcon />
               </IconButton>
               <IconButton
-                aria-label="account of current user"
-                aria-controls="menu-appbar"
-                aria-haspopup="true"
-                onClick={handleMenu}
-                color="inherit"
-              >
-              </IconButton>{" "}
-              <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
-                <Avatar alt="Remy Sharp" src="/static/images/avatar/2.jpg" />
-              </IconButton>
-           
+             aria-label="account of current user"
+             aria-controls="menu-appbar"
+             aria-haspopup="true"
+             onClick={handleMenu}
+             color="inherit" >
 
-
-            <Menu
-              sx={{ mt: "45px" }}
-              id="menu-appbar"
-              anchorEl={anchorElUser}
-              anchorOrigin={{
-                vertical: "top",
-                horizontal: "right",
-              }}
-              keepMounted
-              transformOrigin={{
-                vertical: "top",
-                horizontal: "right",
-              }}
-              open={Boolean(anchorElUser)}
-              onClose={handleCloseUserMenu}
-            >
-              {settings.map((setting) => (
-                <MenuItem key={setting} onClick={handleCloseUserMenu} style={{display:'block'}}>
-                  <Typography textAlign="center" >{setting}</Typography>
-                </MenuItem>
-              ))}
-            </Menu>
+             <AccountCircle />
+         </IconButton>{" "}
+         <Menu
+             id="menu-appbar"
+             anchorEl={anchorEl}
+            anchorOrigin={{
+               vertical: "top",
+               horizontal: "right",
+             }}
+             keepMounted
+             transformOrigin={{
+               vertical: "top",
+               horizontal: "right",
+             }}
+             open={open}
+             onClose={handleClose}
+           >
+             <MenuItem onClick={handleClose}>Meu perfil</MenuItem>
+             <MenuItem onClick={goLogout}>Logout</MenuItem>
+             <Link to="/atualizarProduto" className="tdn">
+             <MenuItem>Cadastrar Produtos</MenuItem>
+             </Link>
+           </Menu>
           </Box>
         </Toolbar>
       </Box>
     </AppBar>
   );
 }
-export default ResponsiveAppBar;
+export default Navbar;
 
 // import React from "react";
 // import {
