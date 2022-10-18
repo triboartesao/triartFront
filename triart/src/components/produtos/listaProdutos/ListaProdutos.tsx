@@ -60,7 +60,11 @@ const classes = useStyles();
 return (
   <div className="listaCards">
     {produtos.map((produtos) => (
+<<<<<<< HEAD
       <Card key={produtos.id}>
+=======
+      <Card className='container-card'>
+>>>>>>> 0998da1899b5dfb0c36110483ccf1cf377e61c5e
           <CardActionArea>
           <Link to={`/produto/${produtos.id}`} className='text-decorator-none' >
             <CardMedia
@@ -85,11 +89,11 @@ return (
           </CardActionArea>
           <CardActions className='cardActions'>
             <Link to={`/produto/${produtos.id}`} className='text-decorator-none'>
-              <Button size="small" color="primary" variant="contained" fullWidth>
+              <Button size="small" color="primary" variant="contained" fullWidth className='btn-lista'>
                 Ver mais
               </Button>
             </Link>
-            <Box display="flex" justifyContent="center" mb={1.5}>
+            <Box display="flex" justifyContent="center" mt={1.5} mb={1.5}>
 
               <Link to={`/atualizarProduto/${produtos.id}`} className="text-decorator-none" >
                 <Box mx={1}>
