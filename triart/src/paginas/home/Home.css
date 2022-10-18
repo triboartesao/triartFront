@@ -1,6 +1,19 @@
 @import url(//db.onlinewebfonts.com/c/e662339992c4abf5b43f537391bd3169?family=Candara);
 @import url('http://fonts.cdnfonts.com/css/bernadette-3');
 
+*{
+  padding: 0;
+  margin: 0;
+}
+
+h1{
+  text-align: center;
+}
+
+.mainHome{
+  display: grid;
+}
+
 .bgLogo {
   position: absolute;
   z-index: 1;
@@ -55,7 +68,7 @@
   top: 0;
   transform: translate(-100%, 0) rotate(10deg);
   transform-origin: top left;
-  transition: 0.2s transform ease-out;
+  transition: 0.1s transform ease-out;
   will-change: transform;
   z-index: -1;
   overflow: hidden;
@@ -73,12 +86,20 @@
 .bgHome {
   width: 100%;
   min-height: 100vh;
-  position: relative;
+
 }
 
 
+.bg-carousel{
+  background-color: #c19158;
+}
+
 
 /* CAROUSEL RESPONSIVE */
+
+/* .bg-carousel{
+  background-color: #c19158;
+}
 
 .carousel {
   margin-left: 15%;
@@ -93,6 +114,9 @@ ul.slides {
   padding: 0;
   overflow: hidden;
   list-style: none;
+  border-style: solid;
+  border-radius: 25px;
+  border-color: black;
 }
 
 .slides * {
@@ -120,7 +144,7 @@ ul.slides input {
   height: 100%;
   top: 0;
   opacity: 0;
-  transition: all .7s ease-in-out;
+  transition: all .2s ease-in-out;
 }   
 
 .slide-image img {
@@ -208,4 +232,111 @@ opacity: 1;
 }
 
 
-input:checked + .slide-container .nav label { display: block; }
+input:checked + .slide-container .nav label { display: block; } */
+
+
+
+/* OUTRO CAROUSEL KK */
+
+.carousel-wrapper {
+  width: 520px;
+  height: 350px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 5px 5px 25px 0px rgba(46, 61, 73, 0.2);
+  border-radius: 20px;
+  margin: 100px auto 20px;
+}
+
+.carousel-container {
+  width: 400px;
+  height: 250px;
+  overflow: hidden;
+  margin: 0 auto;
+}
+
+.carousel {
+  display: flex;
+  width: 1200px;
+  animation: sliding 12s infinite;
+}
+.carousel div {
+  width: 400px;
+  height: 250px;
+  background-size: cover;
+  background-position: center;
+}
+.carousel:hover {
+  animation-play-state: paused;
+}
+.carousel .image-one {
+  background-image: url("https://i.imgur.com/5nNjkgD.png");
+}
+.carousel .image-two {
+  background-image: url("https://i.imgur.com/xg5VY1n.png");
+}
+.carousel .image-three {
+  background-image: url("https://i.imgur.com/bQUvlcS.png");
+}
+
+@keyframes sliding {
+  30% {
+    transform: translateX(0);
+  }
+  35% {
+    transform: translateX(-400px);
+  }
+  65% {
+    transform: translateX(-400px);
+  }
+  70% {
+    transform: translateX(-800px);
+  }
+  98% {
+    transform: translateX(-800px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+@media screen and (max-width: 768px) {
+  .carousel-wrapper {
+    width: 312px;
+    height: 210px;
+  }
+
+  .carousel-container {
+    width: 240px;
+    height: 150px;
+  }
+
+  .carousel {
+    width: 720px;
+  }
+  .carousel > div {
+    width: 240px;
+    height: 150px;
+  }
+
+  @keyframes sliding {
+    30% {
+      transform: translateX(0);
+    }
+    35% {
+      transform: translateX(-240px);
+    }
+    65% {
+      transform: translateX(-240px);
+    }
+    70% {
+      transform: translateX(-480px);
+    }
+    98% {
+      transform: translateX(-480px);
+    }
+    100% {
+      transform: translateX(0);
+    }
+  }
+}

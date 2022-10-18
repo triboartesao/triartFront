@@ -1,11 +1,11 @@
 import React from "react";
 import "./Home.css";
 import { Link } from "react-router-dom";
-import "./carousel";
+
 
 function Home() {
   return (
-    <main>    
+    <main className="mainHome">    
       <section>
       <div>
         <h2 className="MsgEmpreendedor">
@@ -31,15 +31,22 @@ function Home() {
       </div>
     </section>
 
+    {/* Mensagem sobre o projeto */}
+    <section className="bg-carousel">
+      <h1>AQUI VOU INVENTAR ALGUMA MODA SOBRE O PROJETO SER PARA A COMUNIDADE</h1>
+    </section>
+
+
+
     {/* // CAROUSEL RESPONSIVE COM CSS PURO */}
-    <section>
+    {/* <section className="bg-carousel">
     <div>
   <div className="carousel">
     <ul className="slides">
       <input type="radio" name="radio-buttons" id="img-1" checked />
       <li className="slide-container">
         <div className="slide-image">
-          <img src="https://upload.wikimedia.org/wikipedia/commons/9/9e/Timisoara_-_Regional_Business_Centre.jpg" />
+          <img src="https://i.imgur.com/5nNjkgD.png" />
         </div>
         <div className="carousel-controls">
           <label htmlFor="img-3" className="prev-slide">
@@ -53,7 +60,7 @@ function Home() {
       <input type="radio" name="radio-buttons" id="img-2" />
       <li className="slide-container">
         <div className="slide-image">
-          <img src="https://content.r9cdn.net/rimg/dimg/db/02/06b291e8-city-14912-171317ad83a.jpg?width=1750&height=1000&xhint=3040&yhint=2553&crop=true" />
+          <img src="https://i.imgur.com/xg5VY1n.png" />
         </div>
         <div className="carousel-controls">
           <label htmlFor="img-1" className="prev-slide">
@@ -67,7 +74,7 @@ function Home() {
       <input type="radio" name="radio-buttons" id="img-3" />
       <li className="slide-container">
         <div className="slide-image">
-          <img src="https://speakzeasy.files.wordpress.com/2015/05/twa_blogpic_timisoara-4415.jpg" />
+          <img src="https://i.imgur.com/bQUvlcS.png" />
         </div>
         <div className="carousel-controls">
           <label htmlFor="img-2" className="prev-slide">
@@ -86,7 +93,29 @@ function Home() {
     </ul>
   </div>
 </div>
+</section> */}
+
+
+
+
+{/* OUTRO CAROUSEL QUE GOSTEI MAIS KK */}
+
+<section>
+<div className="carousel-wrapper">
+  <div className="carousel-container">
+    <div className="carousel">
+      <div className="image-one"></div>
+      <div className="image-two"></div>
+      <div className="image-three"></div>
+    </div>
+  </div>
+</div>
+
 </section>
+
+
+
+
   </main>
 
 

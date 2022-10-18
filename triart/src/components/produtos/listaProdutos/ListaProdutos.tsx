@@ -60,7 +60,7 @@ const classes = useStyles();
 return (
   <div className="listaCards">
     {produtos.map((produtos) => (
-      <Card className={classes.root} key={produtos.id}>
+      <Card key={produtos.id}>
           <CardActionArea>
           <Link to={`/produto/${produtos.id}`} className='text-decorator-none' >
             <CardMedia
