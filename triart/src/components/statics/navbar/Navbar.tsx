@@ -19,7 +19,21 @@ import { addToken } from "../../../store/tokens/Actions";
 import { toast } from "react-toastify";
 import { createStyles, makeStyles, Theme } from "@material-ui/core";
 
-const pages = ["Home", "Produtos", "Sobre nos", "Contato"];
+const pages = [{'title':'Home',
+                'link': 'home'},
+                {
+                  'title':'Produtos',
+                  'link':'produtos'
+                },{
+                  'title':'Sobre nós',
+                  'link':'sobre'
+                }, {
+                  'title':'Contato',
+                  'link':'contato'
+                }];
+
+
+// const pages = ["Home", "Produtos", "Sobre nos", "Contato"]; 
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -44,8 +58,10 @@ function Navbar() {
     null
   );
 
+
   const handleOpenNavMenu = (event: React.MouseEvent<HTMLElement>) => {
     setAnchorElNav(event.currentTarget);
+    
   };
 
 
@@ -146,9 +162,9 @@ function Navbar() {
               }}
             >
               {pages.map((page) => (
-                <MenuItem key={page} onClick={handleCloseNavMenu}>
-                  <Typography id="decorButton"  textAlign="center" >{page}
-                  <Link to="/home" className="tdn"></Link> </Typography>
+                <MenuItem key={page.title} onClick={handleCloseNavMenu}>
+                  <Typography id="decorButton"  textAlign="center" >{page.title}
+                  </Typography>
                 </MenuItem>
               ))}
             </Menu>
@@ -163,6 +179,7 @@ function Navbar() {
               display: { xs: "flex", md: "none" }
             }}
           >
+
             <img
               src="https://i.imgur.com/UDBIW93.png"
               alt="Logo tribo artesão"
@@ -172,11 +189,13 @@ function Navbar() {
           <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
             {pages.map((page) => (
               <Button
-                key={page}
+                key={page.title}
                 onClick={handleCloseNavMenu}
                 sx={{ my: 2, color: "white", display: "block" }}
               >
-                {page}
+                <Link to={`./${page.link}`} style={{textDecoration:'none', color:'white'}}>
+                  {page.title}
+                </Link>
               </Button>
             ))}
           </Box>
