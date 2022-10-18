@@ -9,6 +9,7 @@ import { busca, buscaId, post, put } from '../../../services/Service';
 import { TokenState } from '../../../store/tokens/TokensReducer';
 import { toast } from 'react-toastify';
 import './CadastroProdutos.css';
+import User from '../../../models/User';
 //cadastro de produtos
 function CadastroProdutos() {
     let navigate = useNavigate();
@@ -17,11 +18,22 @@ function CadastroProdutos() {
     const token = useSelector<TokenState, TokenState['tokens']>(
       (state)=> state.tokens
     ) 
+    const userId = useSelector<TokenState, TokenState['id']>(
+      (state) => state.id
+    )
 
     const [categoria, setCategoria] = useState<Categoria>({
       id: 0,
       tipo: '',
     });
+
+    const [usuario, setUsuario] = useState<User>( {
+      id: +userId,
+      nome: '',
+      usuario: '',
+      senha: '',
+      foto: ''
+    })
   
     const [produtos, setProdutos] = useState<Produto>({
       id: 0,
@@ -33,6 +45,7 @@ function CadastroProdutos() {
       categoria: null,
       usuario: null
     });
+
   
     useEffect(() => {
       if (token === '') {
@@ -54,6 +67,7 @@ function CadastroProdutos() {
       setProdutos({
         ...produtos,
         categoria: categoria,
+        usuario: usuario
       });
     }, [categoria]);
 

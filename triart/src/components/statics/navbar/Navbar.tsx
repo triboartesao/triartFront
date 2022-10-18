@@ -19,17 +19,21 @@ import { addToken } from "../../../store/tokens/Actions";
 import { toast } from "react-toastify";
 import { createStyles, makeStyles, Theme } from "@material-ui/core";
 
-// const pages = ["Home", "Produtos", "Sobre nos", "Contato"];
-
-const pages = [{'title':'Products',
-                'link': 'demo'},
+const pages = [{'title':'Home',
+                'link': 'home'},
                 {
-                  'title':'Pricing',
-                  'link':'cart'
+                  'title':'Produtos',
+                  'link':'produtos'
                 },{
-                  'title':'Blog',
-                  'link':'#'
+                  'title':'Sobre nós',
+                  'link':'sobre'
+                }, {
+                  'title':'Contato',
+                  'link':'contato'
                 }];
+
+
+// const pages = ["Home", "Produtos", "Sobre nos", "Contato"]; 
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -55,8 +59,10 @@ function Navbar() {
     null
   );
 
+
   const handleOpenNavMenu = (event: React.MouseEvent<HTMLElement>) => {
     setAnchorElNav(event.currentTarget);
+    
   };
 
 
@@ -157,8 +163,9 @@ function Navbar() {
               }}
             >
               {pages.map((page) => (
-                <MenuItem key={page} onClick={handleCloseNavMenu}>
-                  <Typography id="decorButton"  textAlign="center" >{page} </Typography>
+                <MenuItem key={page.title} onClick={handleCloseNavMenu}>
+                  <Typography id="decorButton"  textAlign="center" >{page.title}
+                  </Typography>
                 </MenuItem>
                 
 
@@ -175,6 +182,7 @@ function Navbar() {
               display: { xs: "flex", md: "none" }
             }}
           >
+
             <img
               src="https://i.imgur.com/UDBIW93.png"
               alt="Logo tribo artesão"
@@ -184,11 +192,13 @@ function Navbar() {
           <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
             {pages.map((page) => (
               <Button
-                key={page}
+                key={page.title}
                 onClick={handleCloseNavMenu}
                 sx={{ my: 2, color: "white", display: "block" }}
               >
-                {page}
+                <Link to={`./${page.link}`} style={{textDecoration:'none', color:'white'}}>
+                  {page.title}
+                </Link>
               </Button>
             ))}
           </Box>
@@ -239,3 +249,128 @@ function Navbar() {
 }
 export default Navbar;
 
+
+// NAVBAR ANTIGA
+// <div className={classes.root}>
+//   <FormGroup></FormGroup>
+//   <AppBar
+//     position="sticky"
+//     style={{ backgroundColor: "#c19158", margin: "0%", width:'100%' }}
+//   >
+//     <Toolbar>
+
+//       {/*<IconButton
+//         edge="start"
+//         className={classes.menuButton}
+//         color="inherit"
+//         aria-label="menu"
+//       ></IconButton>*/}
+
+//       <Typography className="logo">
+//         <img
+//           src="https://i.imgur.com/UDBIW93.png"
+//           alt="Logo tribo artesão"
+//           width="40%"
+//         />
+//       </Typography>
+//       <nav>
+//       <ul className="stileul">
+//         <li className="stileli">
+//           <a>
+//             <Link to="/home" className="tdn">
+//               <Button
+//                 id="decorButton"
+//                 variant="outlined"
+//                 border-color="#fafafa"
+//               >
+//                 Home
+//               </Button>
+//             </Link>
+//           </a>
+//         </li>
+//         <li className="stileli">
+//           <a>
+//             <Link to="/produtos" className="tdn">
+//               <Button
+//                 id="decorButton"
+//                 variant="outlined"
+//                 border-color="#fafafa"
+//               >
+//                 Produtos
+//               </Button>
+//             </Link>
+//           </a>
+//         </li>
+//         <li className="stileli">
+//           <a>
+//             <Link to="/sobre" className="tdn">
+//               <Button
+//                 id="decorButton"
+//                 variant="outlined"
+//                 border-color="#fafafa"
+//               >
+//                 Sobre nós
+//               </Button>
+//             </Link>
+//           </a>
+//         </li>
+//         <li className="stileli">
+//           <a>
+//             <Link to="/contato" className="tdn">
+//               <Button
+//                 id="decorButton"
+//                 variant="outlined"
+//                 border-color="#fafafa"
+//               >
+//                 Contato
+//               </Button>
+//             </Link>
+//           </a>
+//         </li>
+//       </ul>
+//       </nav>
+//       {auth && (
+        // <section className="icons">
+        //   <IconButton>
+        //     <FavoriteOutlinedIcon />
+        //   </IconButton>
+        //   <IconButton>
+        //     <ShoppingCartIcon />
+        //   </IconButton>
+        //   <IconButton
+        //     aria-label="account of current user"
+        //     aria-controls="menu-appbar"
+        //     aria-haspopup="true"
+        //     onClick={handleMenu}
+        //     color="inherit"
+        //   >
+        //     <AccountCircle />
+        //   </IconButton>{" "}
+//           <Menu
+//             id="menu-appbar"
+//             anchorEl={anchorEl}
+//             anchorOrigin={{
+//               vertical: "top",
+//               horizontal: "right",
+//             }}
+//             keepMounted
+//             transformOrigin={{
+//               vertical: "top",
+//               horizontal: "right",
+//             }}
+//             open={open}
+//             onClose={handleClose}
+//           >
+//             <MenuItem onClick={handleClose}>Meu perfil</MenuItem>
+//             <MenuItem onClick={goLogout}>Logout</MenuItem>
+//             <Link to="/atualizarProduto" className="tdn">
+//             <MenuItem>Cadastrar Produtos</MenuItem>
+//             </Link>
+//           </Menu>
+//         </section>
+//       )}
+//     </Toolbar>
+//   </AppBar>
+// </div>
+//   );
+// }
