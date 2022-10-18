@@ -162,7 +162,8 @@ function Login() {
           </Box>
         </Box>   
       </Grid>
-      <Grid xs={6} className='imagemLogo'>
+      <Grid xs={6} className='imagemLogo' display={{xs:'none',md:'block'}}>
+       
         </Grid >
     </Grid>
 

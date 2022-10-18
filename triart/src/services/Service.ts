@@ -2,7 +2,7 @@ import axios from "axios"
 
 
 export const api = axios.create ({
-    baseURL: 'https://triart.onrender.com'
+    baseURL: 'http://localhost:8080/'
 })
 
 export const cadastroUsuario = async (url:any, dados:any, setDados: any)=> {
