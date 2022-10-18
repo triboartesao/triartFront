@@ -120,6 +120,7 @@ function Login() {
               name="usuario"
               label="Usuário"
               variant="outlined"
+              className='inputLogin'
               fullWidth
               margin="normal"
             />
@@ -130,6 +131,7 @@ function Login() {
                 name='senha'
                 type={values.showPassword ? 'text' : 'password'}
                 value={userLogin.senha}
+                className='inputLogin'
                 onChange={(event: ChangeEvent<HTMLInputElement>) => updateModel(event)}
                 endAdornment={
                   <InputAdornment position="end">

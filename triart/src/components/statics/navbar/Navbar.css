@@ -46,6 +46,10 @@
    text-decoration: none;
  }
 
+ .imgLogo {
+  padding-left: 1rem
+ }
+
  /* .stileul {
    display: inline-flex;
    padding-right: 25%;

@@ -191,7 +191,7 @@ function Cadastrar() {
                   }
                 />
               </FormControl>
-              <Box className="botao" alignItems='center'>
+              <Box className="botao" alignItems='center' justifyContent='space-evenly'>
                 <Link to='/login' className='text-decorator-none'>
                   <Button variant="outlined" className='btn'>
                     Cancelar

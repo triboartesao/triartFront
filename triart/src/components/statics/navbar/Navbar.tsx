@@ -50,7 +50,7 @@ function ResponsiveAppBar() {
   const open = Boolean(anchorEl);
   return (
     <AppBar position="sticky">
-      <Box style={{backgroundColor:'#c19158'}} >
+      <Box style={{backgroundColor:'#c19158', padding: '.25rem 1.725rem'}} >
         <Toolbar disableGutters>
           <Typography 
             variant="h6"
@@ -65,7 +65,8 @@ function ResponsiveAppBar() {
             <img
               src="https://i.imgur.com/UDBIW93.png"
               alt="Logo tribo artesão"
-              width="35%"
+              width="15%"
+              // className="imgLogo"
             />
           </Typography>
 

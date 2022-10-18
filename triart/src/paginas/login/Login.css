@@ -61,10 +61,20 @@
    color: white;
 } */
 
-.label {
+/* .label {
     color: white !important;
+} */
+
+.fundo2  .MuiOutlinedInput-notchedOutline{
+    border-color: rgb(255, 255, 255) !important;
 }
 
-.css-i4bv87-MuiSvgIcon-root {
+.fundo2 .MuiInputBase-input, .fundo2 .MuiFormLabel-root {
+    color: white !important;
+    }
+
+
+
+.fundo2 .css-i4bv87-MuiSvgIcon-root {
     color: white;
 }

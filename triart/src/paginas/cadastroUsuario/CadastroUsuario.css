@@ -16,7 +16,7 @@
 }
 
 .btn {
-    margin-right: 20px !important;
+    /* margin-right: 20px !important; */
     color: white !important;
     border-color: white !important;
 }
@@ -29,7 +29,7 @@
 
 .text-decorator-none {
     text-decoration: none !important;
-    margin-right: 15px;
+    /* margin-right: 15px; */
 }
 
 .fundo {
@@ -51,16 +51,16 @@
     color: white !important;
 }
 
-.MuiOutlinedInput-notchedOutline{
+.fundo22  .MuiOutlinedInput-notchedOutline{
     border-color: rgb(255, 255, 255) !important;
 }
 
-.MuiInputBase-input, .MuiFormLabel-root {
+.fundo22 .MuiInputBase-input, .fundo22 .MuiFormLabel-root {
     color: white !important;
     }
 
 
 
-.css-i4bv87-MuiSvgIcon-root {
+.fundo22 .css-i4bv87-MuiSvgIcon-root {
     color: white;
 }
