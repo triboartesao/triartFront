@@ -12,7 +12,7 @@ function Home() {
           Conectando o empreendedor rural com o mundo!
         </h2>
         <Link to="/produtos">
-          <button className="borderCompras">Vá as compras!</button>
+          <button className="borderCompras">Às compras!</button>
         </Link>
         <Link to="/produtos">
           <img
@@ -103,7 +103,7 @@ function Home() {
 <section>
 <div className="carousel-wrapper">
   <div className="carousel-container">
-    <div className="carousel">
+    <div className="carouselHome">
       <div className="image-one"></div>
       <div className="image-two"></div>
       <div className="image-three"></div>

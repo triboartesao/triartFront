@@ -1,3 +1,157 @@
-h1{
-    background-color: aqua;
+body{
+    margin: 0;
+    background: lightgray;
+    text-align: center;
+    font-family: sans-serif;
+    color: #fefefe;
 }
+
+.textPlace{
+  font-family: 'Carrois Gothic SC', sans-serif !important;
+  background-color: #f0f8ff63;
+  box-shadow: #0d0c0a 0px 22px 70px 4px;
+}
+
+.h1textPlace{
+  font-size: 350%;
+  font-style: italic;
+  font-family: initial;
+  box-shadow: #0d0c0a 0px 22px 70px 4px;
+  padding: 2%;
+  color: #000;
+  background-color: #f0f8ff63;
+}
+
+.TextLogo{
+  display: inline-flex;
+  padding: 3%;
+}
+
+.h2nossaMissao{
+  text-align: left;
+  font-size: 250%;
+  color: #000;
+  padding-top: 5%;
+  margin: 2%;
+  color: white;
+  font-family: cursive;
+}
+
+.h6textPlace{
+  color: #000;
+}
+
+.nossaMissao{
+  background-image: url(https://i.imgur.com/8gFK4Qa.jpg) ;
+  padding-top: 5%;
+  padding: 5%;
+}
+
+.textlogo{
+  padding: 20px;
+  text-align: center;
+  font-size: 260%;
+  border-radius: 40px;
+  background-color: #d9ad5985;
+  box-shadow: 5px 5px 5px 0px #000000, inset 4px 4px 15px 0px #000000, 3px 7px 11px 15px rgb(193 145 88 / 68%);
+ 
+}
+
+.h2titleCarousel{
+  font-size: 300%;
+  font-family: fangsong;
+  color: #000;
+}
+
+.logoSobre{
+  text-align: center;
+  width: auto;
+  padding: 3%;
+}
+
+.carousel-main{
+  min-height: 40vw;
+
+}
+
+.carousel div {
+    width: 300px !important; 
+}
+
+.container {
+    position: relative;
+    width: 320px;
+    margin: 5px auto 0 auto;
+    perspective: 1000px;
+  }
+
+.carousel {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d; 
+    animation: rotate360 60s infinite forwards linear;
+  }
+  .carousel__face { 
+    position: absolute;
+    width: 10px;
+    height: 187px;
+    top: 20px;
+    left: 10px;
+    right: 10px;
+    background-size: cover;
+    box-shadow:inset 0 0 0 2000px rgba(0,0,0,0.5);
+    display: flex;
+    font-family: 'Carrois Gothic SC', sans-serif !important;
+  }
+  
+  span {
+    margin: auto;
+    font-size: 2rem;
+  }
+  
+  
+  .carousel__face:nth-child(1) {
+    background-image: url("https://i.imgur.com/RJMwaKs.jpg");
+    transform: rotateY(  0deg) translateZ(430px); }
+  .carousel__face:nth-child(2) { 
+    background-image: url("https://i.imgur.com/ldPA35p.jpg");
+      transform: rotateY( 40deg) translateZ(430px); }
+  .carousel__face:nth-child(3) {
+    background-image: url("https://i.imgur.com/CNKNwJA.jpg");
+    transform: rotateY( 80deg) translateZ(430px); }
+  .carousel__face:nth-child(4) {
+    background-image: url("https://i.imgur.com/Xguz30P.jpg");
+    transform: rotateY(120deg) translateZ(430px); }
+  .carousel__face:nth-child(5) { 
+    background-image: url("https://i.imgur.com/PCp6tpI.jpg");
+   transform: rotateY(160deg) translateZ(430px); }
+  .carousel__face:nth-child(6) { 
+    background-image: url("https://i.imgur.com/z6Wku2p.jpg");
+   transform: rotateY(200deg) translateZ(430px); }
+  .carousel__face:nth-child(7) { 
+    background-image: url("https://i.imgur.com/CiGJJKt.jpg");
+   transform: rotateY(240deg) translateZ(430px); }
+  .carousel__face:nth-child(8) {
+    background-image: url("https://i.imgur.com/7dy5H1y.jpg");
+    transform: rotateY(280deg) translateZ(430px); }
+  .carousel__face:nth-child(9) {
+    background-image: url("https://i.imgur.com/O9IRx5O.jpg");
+    transform: rotateY(320deg) translateZ(430px); }
+  
+  
+  
+  @keyframes rotate360 {
+    from {
+      transform: rotateY(0deg);
+    }
+    to {
+      transform: rotateY(-360deg);
+    }
+  }
+  
+  @media screen and (max-width: 480){
+    .carousel-main{
+      min-height: 60vw;
+    }
+  }
