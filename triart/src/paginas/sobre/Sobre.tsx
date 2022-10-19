@@ -16,7 +16,7 @@ function Sobre() {
 <body>
 <section className='nossaMissao'>
 
-<h1 className='h1textPlace'>Tribo Artesão - A Tribo da COMUNIDADE</h1>
+<h1 className='h1textPlace'>Tri Art - A Tribo da COMUNIDADE</h1>
 
   <div className='logoSobre'>
     <img src="https://i.imgur.com/UDBIW93.png" alt="Tribo Artesão" />
@@ -30,7 +30,7 @@ function Sobre() {
 
   <div className='textlogo'>
   <h6>
-    O E-commerce Tribo Arteão é uma organização sem fins lucrativos
+    O E-commerce Tri Art é uma organização sem fins lucrativos
     para o desenvolvimento cultural e artístico.
 
     A plataforma é um espaço gratuito criado para todos
