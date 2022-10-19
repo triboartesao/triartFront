@@ -83,14 +83,14 @@ function Login() {
     }
   }
 
-  /* Metodo de pegar o token e o id do json precisa ser ajustado
+
   useEffect(() => {
     if(respUserLogin.token !==''){
       dispatch(addToken(respUserLogin.token))
       dispatch(addId(respUserLogin.id.toString()))
       navigate('/home');
     }
-  }, [respUserLogin])*/
+  }, [respUserLogin])
 
   useEffect(() => {
     if (token !== '') {
