@@ -96,7 +96,6 @@ body{
   }
   .carousel__face { 
     position: absolute;
-    width: 10px;
     height: 187px;
     top: 20px;
     left: 10px;
@@ -157,8 +156,98 @@ body{
     }
   }
   
-  @media screen and (max-width: 480){
+  @media screen and (max-width: 890px){
     .carousel-main{
-      min-height: 60vw;
+      display: none;
+    }
+    .textPlace{
+      display: none;
     }
   }
+
+
+  /* ADICIONANDO CARDS DE CURSOS */
+
+
+  .cardCursos{
+    background: #f5f7f8;
+    font-family: 'Roboto', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    padding: 20px 0;
+  }
+
+  .band {
+    width: 90%;
+    max-width: 1240px;
+    margin: 0 auto;
+    
+    display: inline-flex;
+    
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    grid-gap: 20px;
+    
+  }
+
+  @media only screen and (min-width: 500px) {
+    .band {
+      grid-template-columns: 1fr 1fr;
+    }
+    
+  }
+  
+  @media only screen and (min-width: 850px) {
+    .band {
+      grid-template-columns: 1fr 1fr 1fr 1fr;
+    }
+  }
+
+  .card {
+    background: white;
+    text-decoration: none;
+    color: #444;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    display: flex;
+    flex-direction: column;
+    min-height: 100%;
+    
+    position: relative;
+    top: 0;
+    transition: all .1s ease-in;
+  }
+  .card:hover {
+    top: -2px;
+     box-shadow: 0 4px 5px rgba(0,0,0,0.2);
+  }
+
+  .articleCard {
+    padding: 20px;
+    flex: 1;
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+    /* typography CARD */
+
+    .h1Card {
+      font-size: 20px;
+      margin: 0;
+      color: #333
+    }
+
+    .pCard{
+      flex: 1;
+      line-height: 1.4;
+    }
+
+    .thumb {
+      padding-bottom: 60%;
+      background-size: cover;
+      position: center center;
+      
+    }
+
+
+
