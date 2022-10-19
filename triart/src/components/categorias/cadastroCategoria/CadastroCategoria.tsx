@@ -50,7 +50,7 @@ const [categoria, setCategoria] = useState<Categoria>({
       async function cadastrar(event: ChangeEvent<HTMLFormElement>) {
         event.preventDefault()
     
-        console.log("Categoria " + JSON.stringify(categoria))
+        console.log("Categoria" + JSON.stringify(categoria))
     
         if (id !== undefined) {
             console.log(categoria)

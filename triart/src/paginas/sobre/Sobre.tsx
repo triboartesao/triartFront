@@ -54,16 +54,16 @@ function Sobre() {
   <main className='carousel-main'> 
 <div className="container">
   <div className="carousel">
-    {/* AMANHÃ INSERIR A TAG <A> PARA TODOS OS SPAN DE ACORDO COM O LINK DE CADA LOCAL DO CAROUSEL  */}
-    <div className="carousel__face"><span> <a href="https://pinacoteca.org.br/">Pinacoteca</a></span></div>
-    <div className="carousel__face"><span>Masp</span></div>
-    <div className="carousel__face"><span>Red Bull Station</span></div>
-    <div className="carousel__face"><span>Lasar Segal</span></div>
-    <div className="carousel__face"><span>CCBB</span></div>
-    <div className="carousel__face"><span>Sesc 24 de maio</span></div>
-    <div className="carousel__face"><span>Farol Santander</span></div>
-    <div className="carousel__face"><span>Espaço Porto Seguro</span></div>
-    <div className="carousel__face"><span>Biblioteca Mário de Andrade</span></div>
+    <div className="carousel__face"><span> <a className='linkCarousel' href="https://pinacoteca.org.br/">Pinacoteca</a></span></div>
+    <div className="carousel__face"><span> <a className='linkCarousel' href="https://masp.org.br/">Masp</a></span></div>
+    <div className="carousel__face"><span> <a className='linkCarousel' href="https://www.redbull.com/br-pt/collections/red-bull-station">Red Bull Station</a></span></div>
+    <div className="carousel__face"><span> <a className='linkCarousel' href="http://www.acamls.org.br/">Lasar Segal</a></span></div>
+    <div className="carousel__face"><span> <a className='linkCarousel' href="https://ccbb.com.br/">CCBB</a></span></div>
+    <div className="carousel__face"><span> <a className='linkCarousel' href="https://www.sescsp.org.br/">Sesc 24 de maio</a></span></div>
+    <div className="carousel__face"><span> <a className='linkCarousel' href="https://www.farolsantander.com.br/#/">Farol Santander</a></span></div>
+    <div className="carousel__face"><span> <a className='linkCarousel' href="https://www.archdaily.com.br/br/786322/porto-seguro-cultural-center-sao-paulo-arquitetura">Espaço Porto Seguro</a></span></div>
+    <div className="carousel__face"><span> <a className='linkCarousel' href="https://www.prefeitura.sp.gov.br/cidade/secretarias/cultura/bma/">Biblioteca Mário de Andrade</a></span></div>
+
   </div>
 </div>
 </main>

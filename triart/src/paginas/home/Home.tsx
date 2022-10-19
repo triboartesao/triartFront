@@ -15,8 +15,10 @@ function Home() {
           <button className="borderCompras">Às compras!</button>
         </Link>
         <Link to="/produtos">
+
+          {/* colocar um HOVER PARA ALTERAR PARA PRETO QUANDO CLICAR */}
           <img
-            src="https://i.imgur.com/8Q3oCTF.png"
+            src="https://i.imgur.com/AcggpOm.png"
             alt="Logo"
             className="bgLogo"
           />

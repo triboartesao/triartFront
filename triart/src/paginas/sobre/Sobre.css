@@ -7,18 +7,18 @@ body{
 }
 
 .textPlace{
-  font-family: 'Carrois Gothic SC', sans-serif !important;
+  font-family: cursive;
   background-color: #f0f8ff63;
   box-shadow: #0d0c0a 0px 22px 70px 4px;
 }
 
 .h1textPlace{
-  font-size: 350%;
+  font-size: 287%;
   font-style: italic;
-  font-family: initial;
+  font-family: cursive;
   box-shadow: #0d0c0a 0px 22px 70px 4px;
   padding: 2%;
-  color: #000;
+  color: #c19158;
   background-color: #f0f8ff63;
 }
 
@@ -39,6 +39,7 @@ body{
 
 .h6textPlace{
   color: #000;
+  font-family: cursive;
 }
 
 .nossaMissao{
@@ -54,12 +55,13 @@ body{
   border-radius: 40px;
   background-color: #d9ad5985;
   box-shadow: 5px 5px 5px 0px #000000, inset 4px 4px 15px 0px #000000, 3px 7px 11px 15px rgb(193 145 88 / 68%);
+  font-family: cursive;
  
 }
 
 .h2titleCarousel{
   font-size: 300%;
-  font-family: fangsong;
+  font-family: cursive;
   color: #000;
 }
 
@@ -102,12 +104,17 @@ body{
     background-size: cover;
     box-shadow:inset 0 0 0 2000px rgba(0,0,0,0.5);
     display: flex;
-    font-family: 'Carrois Gothic SC', sans-serif !important;
   }
   
   span {
     margin: auto;
     font-size: 2rem;
+  }
+
+  .linkCarousel{
+    font-family: cursive;
+    text-decoration: none;
+    color: #fff;
   }
   
   

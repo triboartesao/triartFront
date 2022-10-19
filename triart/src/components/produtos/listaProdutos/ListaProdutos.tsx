@@ -84,7 +84,7 @@ return (
             </Link>
           </CardActionArea>
           <CardActions className='cardActions'>
-            <Link to={`/produto/${produtos.id}`} className='text-decorator-none'>
+            <Link to={`/produtos/${produtos.id}`} className='text-decorator-none'>
               <Button size="small" color="primary" variant="contained" fullWidth className='btn-lista'>
                 Ver mais
               </Button>
