@@ -57,7 +57,7 @@ function Login() {
   async function conectar(event: ChangeEvent<HTMLFormElement>) {
     event.preventDefault();
     try {
-      await login('usuarios/logar', userLogin, setRespUserLogin);
+      await login('usuarios/logar', userLogin, setToken);
 
       toast.success('Usuário Logado com Sucesso!', {
         position: "top-right",

@@ -113,7 +113,7 @@ function Navbar() {
 
   return (
     <AppBar position="sticky">
-      <Box style={{backgroundColor:'#c19158', padding: '.25rem 1.725rem'}} >
+      <Box style={{backgroundColor:'#c19258f2', padding: '.25rem 1.725rem'}} >
         <Toolbar disableGutters>
           <Typography 
             variant="h6"
@@ -128,7 +128,7 @@ function Navbar() {
             <img
               src="https://i.imgur.com/UDBIW93.png"
               alt="Logo tribo artesão"
-              width="15%"
+              width="25%"
               className="imgLogo"
             />
           </Typography>
@@ -249,128 +249,3 @@ function Navbar() {
 }
 export default Navbar;
 
-
-// NAVBAR ANTIGA
-// <div className={classes.root}>
-//   <FormGroup></FormGroup>
-//   <AppBar
-//     position="sticky"
-//     style={{ backgroundColor: "#c19158", margin: "0%", width:'100%' }}
-//   >
-//     <Toolbar>
-
-//       {/*<IconButton
-//         edge="start"
-//         className={classes.menuButton}
-//         color="inherit"
-//         aria-label="menu"
-//       ></IconButton>*/}
-
-//       <Typography className="logo">
-//         <img
-//           src="https://i.imgur.com/UDBIW93.png"
-//           alt="Logo tribo artesão"
-//           width="40%"
-//         />
-//       </Typography>
-//       <nav>
-//       <ul className="stileul">
-//         <li className="stileli">
-//           <a>
-//             <Link to="/home" className="tdn">
-//               <Button
-//                 id="decorButton"
-//                 variant="outlined"
-//                 border-color="#fafafa"
-//               >
-//                 Home
-//               </Button>
-//             </Link>
-//           </a>
-//         </li>
-//         <li className="stileli">
-//           <a>
-//             <Link to="/produtos" className="tdn">
-//               <Button
-//                 id="decorButton"
-//                 variant="outlined"
-//                 border-color="#fafafa"
-//               >
-//                 Produtos
-//               </Button>
-//             </Link>
-//           </a>
-//         </li>
-//         <li className="stileli">
-//           <a>
-//             <Link to="/sobre" className="tdn">
-//               <Button
-//                 id="decorButton"
-//                 variant="outlined"
-//                 border-color="#fafafa"
-//               >
-//                 Sobre nós
-//               </Button>
-//             </Link>
-//           </a>
-//         </li>
-//         <li className="stileli">
-//           <a>
-//             <Link to="/contato" className="tdn">
-//               <Button
-//                 id="decorButton"
-//                 variant="outlined"
-//                 border-color="#fafafa"
-//               >
-//                 Contato
-//               </Button>
-//             </Link>
-//           </a>
-//         </li>
-//       </ul>
-//       </nav>
-//       {auth && (
-        // <section className="icons">
-        //   <IconButton>
-        //     <FavoriteOutlinedIcon />
-        //   </IconButton>
-        //   <IconButton>
-        //     <ShoppingCartIcon />
-        //   </IconButton>
-        //   <IconButton
-        //     aria-label="account of current user"
-        //     aria-controls="menu-appbar"
-        //     aria-haspopup="true"
-        //     onClick={handleMenu}
-        //     color="inherit"
-        //   >
-        //     <AccountCircle />
-        //   </IconButton>{" "}
-//           <Menu
-//             id="menu-appbar"
-//             anchorEl={anchorEl}
-//             anchorOrigin={{
-//               vertical: "top",
-//               horizontal: "right",
-//             }}
-//             keepMounted
-//             transformOrigin={{
-//               vertical: "top",
-//               horizontal: "right",
-//             }}
-//             open={open}
-//             onClose={handleClose}
-//           >
-//             <MenuItem onClick={handleClose}>Meu perfil</MenuItem>
-//             <MenuItem onClick={goLogout}>Logout</MenuItem>
-//             <Link to="/atualizarProduto" className="tdn">
-//             <MenuItem>Cadastrar Produtos</MenuItem>
-//             </Link>
-//           </Menu>
-//         </section>
-//       )}
-//     </Toolbar>
-//   </AppBar>
-// </div>
-//   );
-// }
