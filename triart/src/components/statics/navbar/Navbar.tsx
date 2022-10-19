@@ -235,11 +235,14 @@ function Navbar() {
              open={open}
              onClose={handleClose}
            >
+            <Link to = "/perfil" className="tdn">
              <MenuItem onClick={handleClose}>Meu perfil</MenuItem>
+             </Link>
              <MenuItem onClick={goLogout}>Logout</MenuItem>
              <Link to="/atualizarProduto" className="tdn">
              <MenuItem>Cadastrar Produtos</MenuItem>
              </Link>
+             
            </Menu>
           </Box>
         </Toolbar>

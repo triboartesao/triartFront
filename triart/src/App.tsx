@@ -18,6 +18,7 @@ import 'react-toastify/dist/ReactToastify.css';
 import { Provider } from "react-redux";
 import { ToastContainer } from "react-toastify";
 import Contato from './paginas/contato/Contato';
+import Perfil from './components/perfil/Perfil';
 
 function App() {
   return (
@@ -37,6 +38,8 @@ function App() {
             <Route path="/produtos" element={<ListaProdutos />} />
             <Route path="/produtos/:id" element={<ListaProdutos />} />
             <Route path="/categorias" element={<ListaCategoria />} />
+            <Route path="/categorias/:id" element={<ListaCategoria />} />
+            <Route path="/perfil" element=  {<Perfil />} />
             <Route path="/formularioCategoria" element={<CadastroCategoria />} />
             <Route path="/atualizarProduto" element={<CadastroProdutos />} />
             <Route path="/deletarProduto/:id" element={<DeletarProdutos/>} />
