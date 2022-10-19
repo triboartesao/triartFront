@@ -93,10 +93,6 @@ return (
             </Link>
           </CardActionArea>
           <CardActions className='cardActions'>
-
-
-            <Box>
-
             <Link to={`/produtos/${produtos.id}`} className='text-decorator-none'>
               <Button size="small" color="primary" variant="contained" fullWidth className='btn-lista'>
                 Ver mais

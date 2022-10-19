@@ -7,18 +7,18 @@ body{
 }
 
 .textPlace{
-  font-family: 'Carrois Gothic SC', sans-serif !important;
+  font-family: cursive;
   background-color: #f0f8ff63;
   box-shadow: #0d0c0a 0px 22px 70px 4px;
 }
 
 .h1textPlace{
-  font-size: 350%;
+  font-size: 287%;
   font-style: italic;
-  font-family: initial;
+  font-family: cursive;
   box-shadow: #0d0c0a 0px 22px 70px 4px;
   padding: 2%;
-  color: #000;
+  color: #c19158;
   background-color: #f0f8ff63;
 }
 
@@ -39,6 +39,7 @@ body{
 
 .h6textPlace{
   color: #000;
+  font-family: cursive;
 }
 
 .nossaMissao{
@@ -54,12 +55,13 @@ body{
   border-radius: 40px;
   background-color: #d9ad5985;
   box-shadow: 5px 5px 5px 0px #000000, inset 4px 4px 15px 0px #000000, 3px 7px 11px 15px rgb(193 145 88 / 68%);
+  font-family: cursive;
  
 }
 
 .h2titleCarousel{
   font-size: 300%;
-  font-family: fangsong;
+  font-family: cursive;
   color: #000;
 }
 
@@ -94,7 +96,6 @@ body{
   }
   .carousel__face { 
     position: absolute;
-    width: 10px;
     height: 187px;
     top: 20px;
     left: 10px;
@@ -102,12 +103,17 @@ body{
     background-size: cover;
     box-shadow:inset 0 0 0 2000px rgba(0,0,0,0.5);
     display: flex;
-    font-family: 'Carrois Gothic SC', sans-serif !important;
   }
   
   span {
     margin: auto;
     font-size: 2rem;
+  }
+
+  .linkCarousel{
+    font-family: cursive;
+    text-decoration: none;
+    color: #fff;
   }
   
   
@@ -150,8 +156,98 @@ body{
     }
   }
   
-  @media screen and (max-width: 480){
+  @media screen and (max-width: 890px){
     .carousel-main{
-      min-height: 60vw;
+      display: none;
+    }
+    .textPlace{
+      display: none;
     }
   }
+
+
+  /* ADICIONANDO CARDS DE CURSOS */
+
+
+  .cardCursos{
+    background: #f5f7f8;
+    font-family: 'Roboto', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    padding: 20px 0;
+  }
+
+  .band {
+    width: 90%;
+    max-width: 1240px;
+    margin: 0 auto;
+    
+    display: inline-flex;
+    
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    grid-gap: 20px;
+    
+  }
+
+  @media only screen and (min-width: 500px) {
+    .band {
+      grid-template-columns: 1fr 1fr;
+    }
+    
+  }
+  
+  @media only screen and (min-width: 850px) {
+    .band {
+      grid-template-columns: 1fr 1fr 1fr 1fr;
+    }
+  }
+
+  .card {
+    background: white;
+    text-decoration: none;
+    color: #444;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    display: flex;
+    flex-direction: column;
+    min-height: 100%;
+    
+    position: relative;
+    top: 0;
+    transition: all .1s ease-in;
+  }
+  .card:hover {
+    top: -2px;
+     box-shadow: 0 4px 5px rgba(0,0,0,0.2);
+  }
+
+  .articleCard {
+    padding: 20px;
+    flex: 1;
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+    /* typography CARD */
+
+    .h1Card {
+      font-size: 20px;
+      margin: 0;
+      color: #333
+    }
+
+    .pCard{
+      flex: 1;
+      line-height: 1.4;
+    }
+
+    .thumb {
+      padding-bottom: 60%;
+      background-size: cover;
+      position: center center;
+      
+    }
+
+
+

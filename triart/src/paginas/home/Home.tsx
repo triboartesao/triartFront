@@ -15,8 +15,10 @@ function Home() {
           <button className="borderCompras">Às compras!</button>
         </Link>
         <Link to="/produtos">
+
+          {/* colocar um HOVER PARA ALTERAR PARA PRETO QUANDO CLICAR */}
           <img
-            src="https://i.imgur.com/8Q3oCTF.png"
+            src="https://i.imgur.com/AcggpOm.png"
             alt="Logo"
             className="bgLogo"
           />
@@ -30,75 +32,10 @@ function Home() {
         />
       </div>
     </section>
-
     {/* Mensagem sobre o projeto */}
     <section className="bg-carousel">
       <h1>AQUI VOU INVENTAR ALGUMA MODA SOBRE O PROJETO SER PARA A COMUNIDADE</h1>
     </section>
-
-
-
-    {/* // CAROUSEL RESPONSIVE COM CSS PURO */}
-    {/* <section className="bg-carousel">
-    <div>
-  <div className="carousel">
-    <ul className="slides">
-      <input type="radio" name="radio-buttons" id="img-1" checked />
-      <li className="slide-container">
-        <div className="slide-image">
-          <img src="https://i.imgur.com/5nNjkgD.png" />
-        </div>
-        <div className="carousel-controls">
-          <label htmlFor="img-3" className="prev-slide">
-            <span>&lsaquo;</span>
-          </label>
-          <label htmlFor="img-2" className="next-slide">
-            <span>&rsaquo;</span>
-          </label>
-        </div>
-      </li>
-      <input type="radio" name="radio-buttons" id="img-2" />
-      <li className="slide-container">
-        <div className="slide-image">
-          <img src="https://i.imgur.com/xg5VY1n.png" />
-        </div>
-        <div className="carousel-controls">
-          <label htmlFor="img-1" className="prev-slide">
-            <span>&lsaquo;</span>
-          </label>
-          <label htmlFor="img-3" className="next-slide">
-            <span>&rsaquo;</span>
-          </label>
-        </div>
-      </li>
-      <input type="radio" name="radio-buttons" id="img-3" />
-      <li className="slide-container">
-        <div className="slide-image">
-          <img src="https://i.imgur.com/bQUvlcS.png" />
-        </div>
-        <div className="carousel-controls">
-          <label htmlFor="img-2" className="prev-slide">
-            <span>&lsaquo;</span>
-          </label>
-          <label htmlFor="img-1" className="next-slide">
-            <span>&rsaquo;</span>
-          </label>
-        </div>
-      </li>
-      <div className="carousel-dots">
-        <label htmlFor="img-1" className="carousel-dot" id="img-dot-1"></label>
-        <label htmlFor="img-2" className="carousel-dot" id="img-dot-2"></label>
-        <label htmlFor="img-3" className="carousel-dot" id="img-dot-3"></label>
-      </div>
-    </ul>
-  </div>
-</div>
-</section> */}
-
-
-
-
-{/* OUTRO CAROUSEL QUE GOSTEI MAIS KK */}
 
 <section>
 <div className="carousel-wrapper">
@@ -110,8 +47,11 @@ function Home() {
     </div>
   </div>
 </div>
-
 </section>
+
+
+
+
 
 
 

@@ -30,13 +30,14 @@ h1{
 }
 
 .MsgEmpreendedor {
-  color: #000;
+  color: #fff;
   position: absolute;
   z-index: 1;
   top: 53%;
   left: 10%;
   font-size: 150%;
-  font-family: 'Bernadette', sans-serif;
+  text-shadow: 1px 3px 7px rgb(193 145 88);
+  font-family: cursive;
 }
 
 .borderCompras {
@@ -50,7 +51,7 @@ h1{
   z-index: 1;
   top: 68%;
   left: 10%;
-  font-family: 'Bernadette', sans-serif;
+  font-family: cursive;
   transition: 0.2s transform ease-in-out;
   will-change: transform;
   overflow: hidden;
